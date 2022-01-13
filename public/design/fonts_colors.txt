@@ -1,0 +1,32 @@
+FONTES
+--primary: Bebas Neue;
+--secundary: Poppins;
+--size-xl: 64px;
+--size-l: 48px;
+--size-md: 36px;
+--size-sm: 24px;
+--size-xsm: 18px;
+
+icone:
+messagem: FaCommentAlt
+interrogacao: FiHelpCircle
+plano basico: FiAward
+check: FiCheckCircle
+protecao: FiLock
+gerenciamento: FiPieChart
+suporte: FiHeadphones
+atualizações: FiTool
+notificações: FiBell
+calendario: FaRegCalendarAlt
+seta up: FiCornerRightUp
+
+CORES
+--blue-dark: #001694;
+--blue-normal: #044BD9;
+--blue-light: #0460D9;
+--orange-normal: #F28705;
+--orange-light: #F2B705;
+--gray: #F2F2F2;
+--white: #FFFFFF;
+--black: #0D0D0D;
+
