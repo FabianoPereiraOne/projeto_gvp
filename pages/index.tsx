@@ -1,51 +1,68 @@
-import {
-  Container,
-  ContainerLogo,
-  Header,
-  Navbar,
-  NavbarSecundary,
-  Strong,
-  Anchor
-} from '../components/home'
-import { FaRegCalendarAlt } from 'react-icons/fa'
+import '../components/home'
+import * as C from '../components/home'
+import * as Fa from 'react-icons/fa'
+import * as Fi from 'react-icons/fi'
+import Link from 'next/link'
+import bg from '../public/assets/vetor_home.svg'
 
 const Home = () => {
   return (
-    <Container>
-      <Header>
-        <ContainerLogo>
-          <FaRegCalendarAlt />
-          <Strong>Validay</Strong>
-        </ContainerLogo>
+    <C.Container>
+      <C.Header>
+        <C.ContainerLogo>
+          <Fa.FaRegCalendarAlt />
+          <C.Strong>Validay</C.Strong>
+        </C.ContainerLogo>
 
-        <Navbar>
-          <Anchor href="home" aria-label="Anchor para inicio">
-            Inicio
-          </Anchor>
-          <Anchor href="about" aria-label="Anchor para sobre">
-            Sobre
-          </Anchor>
-          <Anchor href="services" aria-label="Anchor para serviços">
-            Serviços
-          </Anchor>
-          <Anchor href="plans" aria-label="Anchor para planos">
-            Planos
-          </Anchor>
-        </Navbar>
-        <NavbarSecundary>
-          <Anchor href="/login" aria-label="Anchor para acessar painel">
-            Acessar
-          </Anchor>
-          <Anchor
-            custumizable={true}
-            href="/register"
-            aria-label="Anchor para se registrar"
+        <C.Navbar>
+          <Link href="home">
+            <C.Anchor aria-label="Anchor para inicio">Inicio</C.Anchor>
+          </Link>
+          <Link href="about">
+            <C.Anchor aria-label="Anchor para sobre">Sobre</C.Anchor>
+          </Link>
+          <Link href="services">
+            <C.Anchor aria-label="Anchor para serviços">Serviços</C.Anchor>
+          </Link>
+          <Link href="plans">
+            <C.Anchor aria-label="Anchor para planos">Planos</C.Anchor>
+          </Link>
+        </C.Navbar>
+        <C.NavbarSecundary>
+          <Link href="/login">
+            <C.Anchor aria-label="Anchor para acessar painel">Acessar</C.Anchor>
+          </Link>
+          <Link href="/register">
+            <C.AnchorBlue marginLeft={1} aria-label="Anchor para se registrar">
+              Registrar
+            </C.AnchorBlue>
+          </Link>
+        </C.NavbarSecundary>
+      </C.Header>
+      <C.Main background={bg.src}>
+        <C.H1>Validay</C.H1>
+        <C.H3>Uma solução moderna.</C.H3>
+        <C.P marginTop={1}>
+          Forneça uma melhor experiência aos seus clientes fazendo um melhor
+          controle da validade de seus produtos.
+        </C.P>
+        <Link href="about">
+          <C.AnchorBlue
+            marginTop={5}
+            height={3}
+            width={20}
+            aria-label="link para conhecer o sistema validay"
           >
-            Registrar
-          </Anchor>
-        </NavbarSecundary>
-      </Header>
-    </Container>
+            Quero conhecer
+          </C.AnchorBlue>
+        </Link>
+        <Link href="home">
+          <C.Circle>
+            <Fi.FiCornerRightUp />
+          </C.Circle>
+        </Link>
+      </C.Main>
+    </C.Container>
   )
 }
 

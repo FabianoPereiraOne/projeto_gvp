@@ -3,7 +3,8 @@
 :root {
   --font-primary: Bebas Neue;
   --font-secundary: Poppins;
-  --size-xl: 48px;
+  --size-xl: 64px;
+  --size-mdl: 48px;
   --size-l: 36px;
   --size-md: 24px;
   --size-sm: 18px;
@@ -28,6 +29,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 button {
