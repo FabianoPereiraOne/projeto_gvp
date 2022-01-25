@@ -46,7 +46,7 @@ export const Navbar = styled.nav`
   justify-content: center;
   gap: 1rem;
 `
-export const Main = styled.main<{
+export const ContainerMain = styled.main<{
   background: string
 }>`
   width: 100%;

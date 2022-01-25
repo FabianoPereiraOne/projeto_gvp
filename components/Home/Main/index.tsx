@@ -5,16 +5,16 @@ import {
   Header,
   NavbarSecundary,
   Navbar,
-  Main,
+  ContainerMain,
   H1,
   Circle
 } from './styles'
 import { Anchor, H3, P, Strong } from '../../../styles/home'
 import { FaRegCalendarAlt } from 'react-icons/fa'
 import { FiCornerRightUp } from 'react-icons/fi'
-import imageBackground from '../public/assets/vetor_home.svg'
+import imageBackground from '../../../public/assets/vetor_home.svg'
 
-export const Home = () => {
+export const Main = () => {
   const background = imageBackground.src
 
   return (
@@ -26,29 +26,29 @@ export const Home = () => {
         </ContainerLogo>
 
         <Navbar>
-          <Link href="home" passHref>
+          <Link href="home">
             <Anchor animationScaleX={true} aria-label="Anchor para inicio">
               Inicio
             </Anchor>
           </Link>
-          <Link href="about" passHref>
+          <Link href="about">
             <Anchor animationScaleX={true} aria-label="Anchor para sobre">
               Sobre
             </Anchor>
           </Link>
-          <Link href="services" passHref>
+          <Link href="services">
             <Anchor animationScaleX={true} aria-label="Anchor para serviços">
               Serviços
             </Anchor>
           </Link>
-          <Link href="plans" passHref>
+          <Link href="plans">
             <Anchor animationScaleX={true} aria-label="Anchor para planos">
               Planos
             </Anchor>
           </Link>
         </Navbar>
         <NavbarSecundary>
-          <Link href="/login" passHref>
+          <Link href="/login">
             <Anchor
               animationScaleX={false}
               borderBottom="1px solid var(--white)"
@@ -57,7 +57,7 @@ export const Home = () => {
               Acessar
             </Anchor>
           </Link>
-          <Link href="/register" passHref>
+          <Link href="/register">
             <Anchor
               animationBackground={true}
               background="var(--blue-dark)"
@@ -70,14 +70,14 @@ export const Home = () => {
           </Link>
         </NavbarSecundary>
       </Header>
-      <Main background={background}>
+      <ContainerMain background={background}>
         <H1>Validay</H1>
         <H3>Uma solução moderna.</H3>
         <P marginTop={1}>
           Forneça uma melhor experiência aos seus clientes fazendo um melhor
           controle da validade de seus produtos.
         </P>
-        <Link href="about" passHref>
+        <Link href="about">
           <Anchor
             animationBackground={true}
             background="var(--blue-dark)"
@@ -95,7 +95,7 @@ export const Home = () => {
             <FiCornerRightUp />
           </Circle>
         </Link>
-      </Main>
+      </ContainerMain>
     </Container>
   )
 }

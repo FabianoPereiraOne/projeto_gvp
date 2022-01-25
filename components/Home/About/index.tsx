@@ -23,7 +23,7 @@ export const About = () => {
           de seus produtos. Forneça uma melhor experiência aos seus clientes
           fazendo um melhor controle da validade de seus produtos.
         </P>
-        <Link href="plans" passHref>
+        <Link href="plans">
           <Anchor
             animationBackground={true}
             background="var(--blue-dark)"
