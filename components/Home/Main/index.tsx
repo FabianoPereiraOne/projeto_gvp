@@ -72,7 +72,7 @@ export const Main = () => {
       </Header>
       <ContainerMain background={background}>
         <H1>Validay</H1>
-        <H3>Uma solução moderna.</H3>
+        <H3 marginTop={-1}>Uma solução moderna.</H3>
         <P marginTop={1}>
           Forneça uma melhor experiência aos seus clientes fazendo um melhor
           controle da validade de seus produtos.
@@ -82,7 +82,7 @@ export const Main = () => {
             animationBackground={true}
             background="var(--blue-dark)"
             borderRadius={2}
-            marginTop={5}
+            marginTop={4}
             height={3}
             width={20}
             aria-label="link para conhecer o sistema validay"

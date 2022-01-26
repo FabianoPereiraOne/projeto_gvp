@@ -8,7 +8,7 @@ export const Footer = () => {
       <Button>
         <FaCommentAlt />
       </Button>
-      <Span>Desenvolvido por Fabiano Pereira &copy;2021</Span>
+      <Span>Copyright &copy;2021 | Desenvolvido por Fabiano Pereira</Span>
       <Button>
         <FiHelpCircle />
       </Button>

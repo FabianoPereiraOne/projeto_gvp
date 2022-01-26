@@ -105,11 +105,13 @@ export const Anchor = styled.a<{
 
 export const H3 = styled.h3<{
   color?: string
+  marginTop?: number
 }>`
   color: ${props => (props.color ? props.color : 'var(--gray)')};
   font-family: var(--font-secundary), sans-serif;
   font-weight: 400;
   font-size: var(--size-l);
+  ${props => props.marginTop && `margin-top: ${props.marginTop}rem;`}
 `
 export const P = styled.p<{
   marginTop?: number
@@ -125,7 +127,6 @@ export const P = styled.p<{
   font-family: var(--font-secundary), sans-serif;
   font-size: var(--size-sm);
   max-width: 25rem;
-  margin-top: 2rem;
   margin-top: ${props => (props.marginTop ? `${props.marginTop}rem` : 0)};
   margin-bottom: ${props =>
     props.marginBottom ? `${props.marginBottom}rem` : 0};
