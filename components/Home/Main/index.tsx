@@ -7,11 +7,14 @@ import {
   Navbar,
   ContainerMain,
   H1,
-  Circle
+  Circle,
+  Span,
+  TextLogo,
+  ButtonMenu
 } from './styles'
-import { Anchor, H3, P, Strong } from '../../../styles/home'
+import { Anchor, P } from '../../../styles/home'
 import { FaRegCalendarAlt } from 'react-icons/fa'
-import { FiCornerRightUp } from 'react-icons/fi'
+import { FiCornerRightUp, FiAlignJustify } from 'react-icons/fi'
 import imageBackground from '../../../public/assets/vetor_home.svg'
 
 export const Main = () => {
@@ -22,7 +25,11 @@ export const Main = () => {
       <Header>
         <ContainerLogo>
           <FaRegCalendarAlt />
-          <Strong>Validay</Strong>
+          <TextLogo>
+            <Span color="var(--orange-light)">g</Span>e
+            <Span color="var(--orange-light)">v</Span>a
+            <Span color="var(--orange-light)">p</Span>ro
+          </TextLogo>
         </ContainerLogo>
 
         <Navbar>
@@ -59,42 +66,55 @@ export const Main = () => {
           </Link>
           <Link href="/register">
             <Anchor
-              animationBackground={true}
-              background="var(--blue-dark)"
+              fontWeight={500}
+              border={'1px solid var(--blue-normal)'}
+              borderReverse={true}
+              background="var(--blue-normal)"
               borderRadius={2}
               marginLeft={1}
+              padding="0.5rem 2rem"
               aria-label="Anchor para se registrar"
             >
               Registrar
             </Anchor>
           </Link>
         </NavbarSecundary>
+
+        <ButtonMenu>
+          <FiAlignJustify />
+        </ButtonMenu>
       </Header>
       <ContainerMain background={background}>
-        <H1>Validay</H1>
-        <H3 marginTop={-1}>Uma solução moderna.</H3>
+        <H1>
+          <Span color="var(--orange-light)">G</Span>erenciador de{' '}
+          <Span color="var(--orange-light)">v</Span>alidade de{' '}
+          <Span color="var(--orange-light)">p</Span>
+          rodutos
+        </H1>
         <P marginTop={1}>
           Forneça uma melhor experiência aos seus clientes fazendo um melhor
           controle da validade de seus produtos.
         </P>
         <Link href="about">
           <Anchor
-            animationBackground={true}
-            background="var(--blue-dark)"
             borderRadius={2}
-            marginTop={4}
+            border="1px solid var(--blue-normal)"
+            marginTop={2}
             height={3}
             width={20}
+            fontWeight={500}
+            padding="0.5rem 2rem"
+            animationBackground={true}
             aria-label="link para conhecer o sistema validay"
           >
             Quero conhecer
           </Anchor>
         </Link>
-        <Link href="home">
+        {/* <Link href="home">
           <Circle>
             <FiCornerRightUp />
           </Circle>
-        </Link>
+        </Link> */}
       </ContainerMain>
     </Container>
   )

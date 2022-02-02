@@ -4,7 +4,11 @@ export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
   padding: 1rem 3rem;
-  background-color: var(--blue-normal);
+  background-color: var(--blue-dark);
+
+  @media screen and (max-width: 600px) {
+    padding: 1rem;
+  }
 `
 export const Header = styled.header`
   width: 100%;
@@ -12,13 +16,10 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  & NavbarSecundary {
-    display: none;
-  }
+  position: relative;
 `
 export const ContainerLogo = styled.div`
-  min-width: 20%;
+  width: auto;
   height: 100%;
   display: flex;
   align-items: center;
@@ -27,16 +28,30 @@ export const ContainerLogo = styled.div`
 
   & svg {
     font-size: var(--size-l);
-    color: var(--blue-dark);
+    color: var(--white);
+  }
+
+  @media screen and (max-width: 600px) {
+    & p {
+      display: none;
+    }
   }
 `
 
+export const Span = styled.span<{
+  color?: string
+}>`
+  ${props => props.color && `color: ${props.color}`}
+`
 export const NavbarSecundary = styled.div`
   width: auto;
   height: 100%
   display: flex;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
 `
 export const Navbar = styled.nav`
   width: auto;
@@ -44,13 +59,21 @@ export const Navbar = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
 `
 export const ContainerMain = styled.main<{
   background: string
 }>`
   width: 100%;
-  min-height: 80vh;
+  min-height: 88vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,12 +82,41 @@ export const ContainerMain = styled.main<{
   background-position: 100% 100%;
   background-size: 60%;
   background-repeat: no-repeat;
+
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    background-position: 130% 30%;
+    background-size: 70%;
+  }
+
+  @media screen and (max-width: 600px) {
+    align-items: center;
+
+    & p {
+      text-align: center;
+    }
+
+    & a {
+      margin-top: 3rem;
+      font-size: 1.1rem;
+      width: 90%;
+    }
+  }
 `
 export const H1 = styled.h1`
   color: var(--white);
   font-family: var(--font-primary), sans-serif;
   font-weight: 500;
   font-size: var(--size-xl);
+  max-width: 22rem;
+
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    font-size: 3.5rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    text-align: center;
+    font-size: 3rem;
+  }
 `
 
 export const Circle = styled.a<{
@@ -91,5 +143,30 @@ export const Circle = styled.a<{
   transition: 0.3s;
   &:hover {
     transform: scale(1.1, 1.1);
+  }
+`
+
+export const TextLogo = styled.p`
+  text-transform: uppercase;
+  font-family: var(--font-secundary), sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-top: 0.4rem;
+  font-weight: normal;
+  color: var(--white);
+`
+
+export const ButtonMenu = styled.button`
+  display: none;
+
+  @media screen and (max-width: 1000px) {
+    display: inline-block;
+    background: none;
+    border: none;
+
+    & svg {
+      color: var(--white);
+      font-size: 3rem;
+    }
   }
 `

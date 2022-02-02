@@ -48,13 +48,14 @@ export const Slider = styled.div`
     overflow: hidden;
   }
 `
+
 export const ContentText = styled.div`
   max-width: 50%;
   height: auto;
   position: absolute;
   right: 0;
   bottom: 0;
-  padding: 0 2rem 2rem 0;
+  padding: 0 4rem 2rem 0;
 
   & p:last-of-type {
     margin-top: 0.5rem;

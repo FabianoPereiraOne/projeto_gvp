@@ -35,20 +35,21 @@ export const Anchor = styled.a<{
   animationBackground?: boolean
   borderReverse?: boolean
   borderHover?: string
+  fontWeight?: number
 }>`
   width: ${props => (props.width ? `${props.width}rem` : 'auto')};
   height: ${props => (props.height ? `${props.height}rem` : 'auto')};
   background: ${props => (props.background ? props.background : 'none')};
-  padding: ${props => (props.padding ? props.padding : '0.3rem 1.5rem')};
+  padding: ${props => (props.padding ? props.padding : 0)};
   margin-top: ${props => (props.marginTop ? `${props.marginTop}rem` : 0)};
   margin-bottom: ${props =>
     props.marginBottom ? `${props.marginBottom}rem` : 0};
   margin-left: ${props => (props.marginLeft ? `${props.marginLeft}rem` : 0)};
   margin-right: ${props => (props.marginRight ? `${props.marginRight}rem` : 0)};
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: ${props => (props.fontWeight ? props.fontWeight : 400)};
   color: var(--white);
-  font-size: ${props => (props.size ? props.size : 'var(--size-md)')};
+  font-size: ${props => (props.size ? props.size : '1.4rem')};
   transition: 0.3s;
   text-align: center;
   vertical-align: middle;
@@ -57,7 +58,7 @@ export const Anchor = styled.a<{
   ${props => props.borderLeft && `border-left: ${props.borderLeft};`}
   ${props => props.borderRight && `border-right: ${props.borderRight};`}
   ${props => props.borderTop && `border-top: ${props.borderTop};`}
-  ${props => props.border && `  border: 1px solid ${props.border};`}
+  ${props => props.border && `  border:${props.border};`}
   ${props => props.borderRadius && `border-radius: ${props.borderRadius}rem;`}
 
   ${props =>
@@ -87,9 +88,8 @@ export const Anchor = styled.a<{
   ${props =>
     props.animationBackground &&
     `&:hover {
-      background-color: var(--orange-normal);
-      ${props => props.border && `border: 1px solid var(--orange-normal);`}
-      : ;
+      background-color: var(--blue-normal);
+      border: 1px solid var(--blue-normal);
     }`}
 
 
@@ -97,10 +97,15 @@ export const Anchor = styled.a<{
     props.borderReverse &&
     `
     &:hover { 
-      ${props => props.borderHover && `border: 1px solid black;`}
+      border: 1px solid var(--blue-normal);
       background: none; 
     }
     `}
+
+
+    @media screen and (min-width:900px) and (max-width:1201px) {
+    font-size: ${props => (props.size ? props.size : '1.2rem')};
+  }
 `
 
 export const H3 = styled.h3<{
