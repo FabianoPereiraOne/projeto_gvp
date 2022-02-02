@@ -90,15 +90,17 @@ export const ContainerMain = styled.main<{
 
   @media screen and (max-width: 600px) {
     align-items: center;
+    background: none;
+    padding: 2rem 0;
 
     & p {
       text-align: center;
     }
 
-    & a {
+    & a:first-of-type {
       margin-top: 3rem;
       font-size: 1.1rem;
-      width: 90%;
+      width: 85%;
     }
   }
 `
@@ -168,5 +170,14 @@ export const ButtonMenu = styled.button`
       color: var(--white);
       font-size: 3rem;
     }
+  }
+`
+
+export const Img = styled.img`
+  display: none;
+
+  @media screen and (max-width: 600px) {
+    display: block;
+    max-width: 100%;
   }
 `

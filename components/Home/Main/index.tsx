@@ -10,7 +10,8 @@ import {
   Circle,
   Span,
   TextLogo,
-  ButtonMenu
+  ButtonMenu,
+  Img
 } from './styles'
 import { Anchor, P } from '../../../styles/home'
 import { FaRegCalendarAlt } from 'react-icons/fa'
@@ -25,11 +26,7 @@ export const Main = () => {
       <Header>
         <ContainerLogo>
           <FaRegCalendarAlt />
-          <TextLogo>
-            <Span color="var(--orange-light)">g</Span>e
-            <Span color="var(--orange-light)">v</Span>a
-            <Span color="var(--orange-light)">p</Span>ro
-          </TextLogo>
+          <TextLogo>gvp</TextLogo>
         </ContainerLogo>
 
         <Navbar>
@@ -110,11 +107,16 @@ export const Main = () => {
             Quero conhecer
           </Anchor>
         </Link>
-        {/* <Link href="home">
+        <Img
+          src="/assets/vetor_home.svg"
+          alt="Imagem ilustrativa de um sistema de controle"
+        />
+
+        <Link href="home">
           <Circle>
             <FiCornerRightUp />
           </Circle>
-        </Link> */}
+        </Link>
       </ContainerMain>
     </Container>
   )
