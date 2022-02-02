@@ -30,12 +30,6 @@ export const ContainerLogo = styled.div`
     font-size: var(--size-l);
     color: var(--white);
   }
-
-  @media screen and (max-width: 600px) {
-    & p {
-      display: none;
-    }
-  }
 `
 
 export const Span = styled.span<{
@@ -180,4 +174,28 @@ export const Img = styled.img`
     display: block;
     max-width: 100%;
   }
+`
+export const MenuMobile = styled.aside`
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--blue-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  transition: 0.3s;
+  z-index: 50;
+`
+export const ButtonClose = styled.button`
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 3rem;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
 `

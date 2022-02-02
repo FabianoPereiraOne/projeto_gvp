@@ -11,15 +11,19 @@ import {
   Span,
   TextLogo,
   ButtonMenu,
-  Img
+  Img,
+  MenuMobile,
+  ButtonClose
 } from './styles'
 import { Anchor, P } from '../../../styles/home'
 import { FaRegCalendarAlt } from 'react-icons/fa'
-import { FiCornerRightUp, FiAlignJustify } from 'react-icons/fi'
+import { FiCornerRightUp, FiAlignJustify, FiXCircle } from 'react-icons/fi'
 import imageBackground from '../../../public/assets/vetor_home.svg'
+import { useState } from 'react'
 
 export const Main = () => {
   const background = imageBackground.src
+  const [activeMenu, setActiveMenu] = useState(false)
 
   return (
     <Container>
@@ -77,7 +81,7 @@ export const Main = () => {
           </Link>
         </NavbarSecundary>
 
-        <ButtonMenu>
+        <ButtonMenu onClick={() => setActiveMenu(true)}>
           <FiAlignJustify />
         </ButtonMenu>
       </Header>
@@ -118,6 +122,33 @@ export const Main = () => {
           </Circle>
         </Link>
       </ContainerMain>
+      {activeMenu && (
+        <MenuMobile>
+          <ButtonClose onClick={() => setActiveMenu(false)}>
+            <FiXCircle />
+          </ButtonClose>
+          <Link href="home">
+            <Anchor animationScaleX={true} aria-label="Anchor para inicio">
+              Inicio
+            </Anchor>
+          </Link>
+          <Link href="about">
+            <Anchor animationScaleX={true} aria-label="Anchor para sobre">
+              Sobre
+            </Anchor>
+          </Link>
+          <Link href="services">
+            <Anchor animationScaleX={true} aria-label="Anchor para serviços">
+              Serviços
+            </Anchor>
+          </Link>
+          <Link href="plans">
+            <Anchor animationScaleX={true} aria-label="Anchor para planos">
+              Planos
+            </Anchor>
+          </Link>
+        </MenuMobile>
+      )}
     </Container>
   )
 }
