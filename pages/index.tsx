@@ -13,8 +13,8 @@ const Home = () => {
         <title>GVP | Gerenciador de validade de produtos</title>
       </Head>
       <Main />
-      {/* <About />
-      <Services />
+      <About />
+      {/* <Services />
       <Plans />
       <Footer /> */}
     </>

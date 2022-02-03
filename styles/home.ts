@@ -48,7 +48,7 @@ export const Anchor = styled.a<{
   margin-right: ${props => (props.marginRight ? `${props.marginRight}rem` : 0)};
   text-transform: uppercase;
   font-weight: ${props => (props.fontWeight ? props.fontWeight : 400)};
-  color: var(--white);
+  color: ${props => (props.color ? props.color : 'var(--white)')};
   font-size: ${props => (props.size ? props.size : '1.4rem')};
   transition: 0.3s;
   text-align: center;
@@ -90,6 +90,7 @@ export const Anchor = styled.a<{
     `&:hover {
       background-color: var(--blue-normal);
       border: 1px solid var(--blue-normal);
+      color: ${props.colorHover};
     }`}
 
 
@@ -99,6 +100,7 @@ export const Anchor = styled.a<{
     &:hover { 
       border: 1px solid var(--blue-normal);
       background: none; 
+      color: ${props.colorHover};
     }
     `}
 
@@ -127,8 +129,9 @@ export const P = styled.p<{
   height?: number
   color?: string
   justify?: boolean
+  fontWeight?: number
 }>`
-  color: ${props => (props.color ? props.color : 'var(--gray)')};
+  color: ${props => (props.color ? props.color : 'var(--white)')};
   font-family: var(--font-secundary), sans-serif;
   font-size: var(--size-sm);
   max-width: 25rem;
@@ -138,15 +141,18 @@ export const P = styled.p<{
   margin-left: ${props => (props.marginLeft ? `${props.marginLeft}rem` : 0)};
   margin-right: ${props => (props.marginRight ? `${props.marginRight}rem` : 0)};
   text-align: ${props => (props.justify ? 'justify' : 'left')};
+  font-weight: ${props => (props.fontWeight ? props.fontWeight : 400)};
 `
 export const Img = styled.img`
   max-width: 70%;
   max-height: 100vh;
 `
 
-export const H5 = styled.h5`
+export const H5 = styled.h5<{
+  color?: string
+}>`
   text-transform: uppercase;
-  color: var(--white);
+  color: ${props => (props.color ? props.color : 'var(--white)')};
   font-family: var(--font-primary), sans-serif;
   font-size: var(--size-l);
   font-weight: 500;

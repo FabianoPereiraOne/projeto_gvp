@@ -6,6 +6,10 @@ export const Container = styled.div`
   padding: 1rem 3rem;
   background-color: var(--blue-dark);
 
+  @media screen and (min-width: 600px) and (max-width: 1200px) {
+    padding: 1rem 2rem;
+  }
+
   @media screen and (max-width: 600px) {
     padding: 1rem;
   }
@@ -63,7 +67,7 @@ export const Navbar = styled.nav`
     display: none;
   }
 `
-export const ContainerMain = styled.main<{
+export const ContainerMain = styled.div<{
   background: string
 }>`
   width: 100%;

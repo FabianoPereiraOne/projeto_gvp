@@ -106,7 +106,7 @@ export const Main = () => {
             fontWeight={500}
             padding="0.5rem 2rem"
             animationBackground={true}
-            aria-label="link para conhecer o sistema validay"
+            aria-label="link para conhecer o sistema GVP"
           >
             Quero conhecer
           </Anchor>

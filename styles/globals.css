@@ -15,7 +15,7 @@
   --orange-normal: #f28705;
   --orange-light: #f2b705;
   --purple: #4408a1;
-  --gray: #f2f2f2;
+  --gray: #474646;
   --white: #ffffff;
   --black: #0d0d0d;
 }
@@ -35,6 +35,7 @@ a {
 
 button {
   outline: none;
+  cursor: pointer;
 }
 
 * {
