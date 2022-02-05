@@ -6,12 +6,8 @@ export const Container = styled.div`
   padding: 1rem 3rem;
   background-color: var(--blue-dark);
 
-  @media screen and (min-width: 600px) and (max-width: 1200px) {
-    padding: 1rem 2rem;
-  }
-
-  @media screen and (max-width: 600px) {
-    padding: 1rem;
+  @media screen and (max-width: 1200px) {
+    padding: 1rem 1.5rem;
   }
 `
 export const Header = styled.header`
@@ -98,7 +94,23 @@ export const ContainerMain = styled.div<{
     & a:first-of-type {
       margin-top: 3rem;
       font-size: 1.1rem;
-      width: 85%;
+      width: 80%;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    align-items: center;
+    background: none;
+    padding: 2rem 0;
+
+    & p {
+      text-align: center;
+    }
+
+    & a:first-of-type {
+      margin-top: 3rem;
+      font-size: 1.1rem;
+      width: 100%;
     }
   }
 `
@@ -136,13 +148,17 @@ export const Circle = styled.a<{
   align-items: center;
   justify-content: center;
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 3rem;
+  right: 3rem;
   z-index: 50;
   font-size: ${props => (props.fontSize ? `${props.fontSize}rem` : '1.6rem')};
   transition: 0.3s;
   &:hover {
     transform: scale(1.1, 1.1);
+  }
+
+  @media screen and (max-width: 1200px) {
+    bottom: 1.5rem;
   }
 `
 

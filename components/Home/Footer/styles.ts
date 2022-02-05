@@ -8,8 +8,16 @@ export const Container = styled.footer`
   align-items: center;
   justify-content: center;
   position: relative;
+  @media screen and (min-width: 2000px) {
+    margin-top: -1rem;
+  }
+  @media screen and (max-width: 1000px) {
+    height: 10rem;
+  }
 `
 export const Span = styled.span`
+  max-width: 70%;
+  text-align: center;
   color: var(--white);
   font-size: var(--size-sm);
   position: relative;
@@ -51,5 +59,34 @@ export const Button = styled.button`
     bottom: 0;
     right: 10rem;
     border-radius: 50% 50% 0 0;
+  }
+
+  @media screen and (max-width: 1000px) {
+    &:first-of-type {
+      bottom: 0.5rem;
+      height: 4rem;
+    }
+    &:last-of-type {
+      width: 4.5rem;
+      height: 4rem;
+      left: 0;
+      bottom: 5rem;
+      border-radius: 0 50% 50% 0;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    &:first-of-type {
+      bottom: 1rem;
+      height: 3rem;
+      width: 3rem;
+    }
+    &:last-of-type {
+      width: 3rem;
+      height: 3rem;
+      left: 0;
+      bottom: 5rem;
+      border-radius: 0 50% 50% 0;
+    }
   }
 `

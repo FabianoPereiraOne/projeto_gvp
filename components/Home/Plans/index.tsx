@@ -55,12 +55,13 @@ export const Plans = () => {
 
         <Link href="buy">
           <Anchor
-            background="var(--orange-normal)"
+            background="var(--blue-normal)"
+            border="1px solid var(--blue-normal)"
             borderRadius={2}
             borderReverse={true}
             borderHover="var(--white)"
             size="var(--size-sm)"
-            padding="0.5rem 2rem"
+            padding="0.5rem 2.5rem"
           >
             Assinar
           </Anchor>

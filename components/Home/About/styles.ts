@@ -17,12 +17,8 @@ export const Container = styled.section<{
     flex-direction: column;
   }
 
-  @media screen and (min-width: 600px) and (max-width: 1200px) {
-    padding: 1rem 2rem;
-  }
-
-  @media screen and (max-width: 600px) {
-    padding: 1rem;
+  @media screen and (max-width: 1200px) {
+    padding: 1rem 1.5rem;
   }
 `
 
@@ -54,8 +50,9 @@ export const ContainerTextAbout = styled.main`
 
   @media screen and (max-width: 600px) {
     & a {
-      width: 90%;
+      width: 100%;
       font-size: 1.1rem;
+      text-align: center;
     }
     & p {
       max-width: 100%;

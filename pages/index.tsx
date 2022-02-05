@@ -14,9 +14,9 @@ const Home = () => {
       </Head>
       <Main />
       <About />
-      {/* <Services />
+      <Services />
       <Plans />
-      <Footer /> */}
+      <Footer />
     </>
   )
 }

@@ -1,12 +1,11 @@
 import { Container, Span, Button } from './styles'
-import { FiHelpCircle } from 'react-icons/fi'
-import { FaCommentAlt } from 'react-icons/fa'
+import { FiHelpCircle, FiMessageSquare } from 'react-icons/fi'
 
 export const Footer = () => {
   return (
     <Container>
       <Button>
-        <FaCommentAlt />
+        <FiMessageSquare />
       </Button>
       <Span>Copyright &copy;2021 | Desenvolvido por Fabiano Pereira</Span>
       <Button>
