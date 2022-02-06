@@ -57,7 +57,7 @@ export const Services = () => {
         <P>
           Nosso sistema possui o máximo de funcionalidades como: Sistema seguro,
           Layout responsivo e moderno, Banco de dados e outros. Tudo isso para
-          que você ofereça ao seu cliente um produto "Top de linha".
+          que você ofereça ao seu cliente um produto de qualidade.
         </P>
       </ContentText>
     </Container>

@@ -51,7 +51,7 @@ export const Plans = () => {
         </P>
         <Strong cor="var(--white)">R$ 20,99</Strong>
 
-        <Link href="/#">
+        <Link href="/#" passHref={true}>
           <Anchor
             background="var(--blue-normal)"
             border="1px solid var(--blue-normal)"
