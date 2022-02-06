@@ -1,0 +1,43 @@
+.carousel {
+  width: 30rem;
+  height: 12rem;
+  background-color: var(--blue-dark);
+  position: absolute;
+  left: 50%;
+  top: 1rem;
+  transform: translate(-50%, 0);
+  border-radius: 0.2rem;
+  pointer-events: none;
+}
+.slider {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+
+.slide svg {
+  color: var(--white);
+  font-size: var(--size-l);
+  margin-top: 1.5rem;
+}
+
+.slide p {
+  max-height: 4.5em;
+  text-align: center;
+  overflow: hidden;
+  text-align: center;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  .carousel {
+    width: 80%;
+  }
+}

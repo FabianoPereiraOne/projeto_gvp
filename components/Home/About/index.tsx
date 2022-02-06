@@ -18,18 +18,16 @@ export const About = () => {
           Conheça nosso sistema.
         </P>
         <P color="var(--gray)" marginTop={0.5}>
-          Forneça uma melhor experiência aos seus clientes fazendo um melhor
-          controle da validade de seus produtos.Forneça uma melhor experiência
-          aos seus clientes fazendo um melhor controle da validade de seus
-          produtos. Forneça uma melhor experiência aos seus clientes fazendo um
-          melhor controle da validade de seus produtos.Forneça uma melhor
-          experiência aos seus clientes fazendo um melhor controle da validade
-          de seus produtos. Forneça uma melhor experiência aos seus clientes
-          fazendo um melhor controle da validade de seus produtos. melhor
-          controle da validade de seus produtos.Forneça uma melhor experiência
-          aos seus clientes fazendo um melhor controle da validade de seus
-          produtos. Forneça uma melhor experiência aos seus clientes fazendo um
-          melhor controle d.
+          O GVP surgiu de uma demanda no mercado de tecnologia para
+          estabelecimentos que revendem produtos que usamos em nosso dia a dia.
+          Apartir da experiência propria de mim, Fabiano Pereira, criador do
+          sistema, que a ideia que antes era inconsebivel começou a tomar forma,
+          e apartir do ano de 2022, foi iniciado a landing page que daria inicio
+          ao projeto, e foi nessa ideia que hoje podemos desfrutar de um
+          software que não só ajudará os donos dos Supermercados, mas também nós
+          consumidores, já que a proposta do GVP é oferecer um melhor controle
+          da validade dos produtos fazendo com que o consumidor final tenha um
+          produto de qualidade e certificação.
         </P>
         <Link to="plans" smooth={true}>
           <Anchor

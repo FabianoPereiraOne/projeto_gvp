@@ -16,10 +16,9 @@ export const Plans = () => {
         <H5>Planos</H5>
         <P color="var(--blue-light)">Conheças nossos planos.</P>
         <P>
-          Forneça uma melhor experiência aos seus clientes fazendo um melhor
-          controle da validade de seus produtos.Forneça uma melhor experiência
-          aos seus clientes fazendo um melhor controle da validade de seus
-          produtos.
+          Estamos com planos imperdiveis, aproveite esse super descontão e tenha
+          hoje um sistema alinhado ao gosto e sem gasta muito. Oferta por tempo
+          limitado!
         </P>
       </ContainerTextPlans>
       <Card>
@@ -45,11 +44,10 @@ export const Plans = () => {
             Notificações
           </P>
         </ContentBenefits>
-        <P justify={true}>
-          Forneça uma melhor experiência aos seus clientes fazendo um melhor
-          controle da validade de seus produtos.Forneça uma melhor experiência
-          aos seus clientes fazendo um melhor controle da validade de seus
-          produtos.
+        <P justify={false}>
+          Tenha 7 dias de teste para você conhecer nossas funcionalidades e e
+          outros serviços que desenvolvemos com muito carinho para nossos
+          clientes. Aproveite!!!
         </P>
         <Strong cor="var(--white)">R$ 20,99</Strong>
 
