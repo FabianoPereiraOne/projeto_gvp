@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import * as Scroll from 'react-scroll'
+const Link = Scroll.Link
 
 export const Strong = styled.strong<{
   size?: number | string
@@ -12,7 +14,7 @@ export const Strong = styled.strong<{
   color: ${props => (props.cor ? props.cor : 'var(--white)')};
 `
 
-export const Anchor = styled.a<{
+export const Anchor = styled(Link)<{
   marginTop?: number
   marginBottom?: number
   marginLeft?: number

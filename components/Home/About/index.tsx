@@ -1,11 +1,8 @@
 import groupTi from '../../../public/assets/vetor_about.svg'
 import { Container, ContainerTextAbout, Img } from './styles'
 import { Anchor, H5, P } from '../../../styles/home'
-import * as Scroll from 'react-scroll'
 
 export const About = () => {
-  const Link = Scroll.Link
-
   return (
     <Container id="about">
       <Img
@@ -29,24 +26,24 @@ export const About = () => {
           da validade dos produtos fazendo com que o consumidor final tenha um
           produto de qualidade e certificação.
         </P>
-        <Link to="plans" smooth={true}>
-          <Anchor
-            borderRadius={2}
-            background="var(--blue-normal)"
-            marginTop={2}
-            height={3}
-            width={20}
-            fontWeight={500}
-            color="var(--white)"
-            colorHover="var(--blue-normal)"
-            border={'1px solid var(--blue-normal)'}
-            borderReverse={true}
-            padding="0.5rem 2rem"
-            aria-label="link para conhecer o sistema GVP"
-          >
-            Conhecer planos
-          </Anchor>
-        </Link>
+        <Anchor
+          to="plans"
+          smooth={true}
+          borderRadius={2}
+          background="var(--blue-normal)"
+          marginTop={2}
+          height={3}
+          width={20}
+          fontWeight={500}
+          color="var(--white)"
+          colorHover="var(--blue-normal)"
+          border={'1px solid var(--blue-normal)'}
+          borderReverse={true}
+          padding="0.5rem 2rem"
+          aria-label="link para conhecer o sistema GVP"
+        >
+          Conhecer planos
+        </Anchor>
       </ContainerTextAbout>
     </Container>
   )

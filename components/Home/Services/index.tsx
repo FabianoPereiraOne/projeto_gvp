@@ -23,8 +23,7 @@ export const Services = () => {
           <Slide index={0} className={styles.slide}>
             <FiLock />
             <P marginTop={0.3}>
-              Aproveite de um sistema incrivel, que prioriza a segurança dos
-              dados da sua empresa e também dos seus produtos.
+              Fique tranquilo que a segurança de seus dados é nossa prioridade.
             </P>
           </Slide>
           <Slide index={1} className={styles.slide}>

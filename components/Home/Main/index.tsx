@@ -35,51 +35,61 @@ export const Main = () => {
         </ContainerLogo>
 
         <Navbar>
-          <Link to="home" smooth={true}>
-            <Anchor animationScaleX={true} aria-label="Anchor para inicio">
-              Inicio
-            </Anchor>
-          </Link>
-          <Link to="about" smooth={true}>
-            <Anchor animationScaleX={true} aria-label="Anchor para sobre">
-              Sobre
-            </Anchor>
-          </Link>
-          <Link to="services" smooth={true}>
-            <Anchor animationScaleX={true} aria-label="Anchor para serviços">
-              Serviços
-            </Anchor>
-          </Link>
-          <Link to="plans" smooth={true}>
-            <Anchor animationScaleX={true} aria-label="Anchor para planos">
-              Planos
-            </Anchor>
-          </Link>
+          <Anchor
+            to="home"
+            smooth={true}
+            animationScaleX={true}
+            aria-label="Anchor para inicio"
+          >
+            Inicio
+          </Anchor>
+          <Anchor
+            to="about"
+            smooth={true}
+            animationScaleX={true}
+            aria-label="Anchor para sobre"
+          >
+            Sobre
+          </Anchor>
+          <Anchor
+            to="services"
+            smooth={true}
+            animationScaleX={true}
+            aria-label="Anchor para serviços"
+          >
+            Serviços
+          </Anchor>
+          <Anchor
+            to="plans"
+            smooth={true}
+            animationScaleX={true}
+            aria-label="Anchor para planos"
+          >
+            Planos
+          </Anchor>
         </Navbar>
         <NavbarSecundary>
-          <Link to="/#">
-            <Anchor
-              animationScaleX={false}
-              borderBottom="1px solid var(--white)"
-              aria-label="Anchor para acessar painel"
-            >
-              Acessar
-            </Anchor>
-          </Link>
-          <Link to="/#">
-            <Anchor
-              fontWeight={500}
-              border={'1px solid var(--blue-normal)'}
-              borderReverse={true}
-              background="var(--blue-normal)"
-              borderRadius={2}
-              marginLeft={1}
-              padding="0.5rem 2rem"
-              aria-label="Anchor para se registrar"
-            >
-              Registrar
-            </Anchor>
-          </Link>
+          <Anchor
+            to="#"
+            borderBottom="1px solid var(--white)"
+            animationScaleX={false}
+            aria-label="Anchor para acessar painel"
+          >
+            Acessar
+          </Anchor>
+          <Anchor
+            to="/#"
+            border="1px solid var(--blue-normal)"
+            fontWeight={500}
+            borderReverse={true}
+            background="var(--blue-normal)"
+            borderRadius={2}
+            marginLeft={1}
+            padding="0.5rem 2rem"
+            aria-label="Anchor para se registrar"
+          >
+            Registrar
+          </Anchor>
         </NavbarSecundary>
 
         <ButtonMenu onClick={() => setActiveMenu(true)}>
@@ -97,20 +107,20 @@ export const Main = () => {
           Forneça uma melhor experiência aos seus clientes fazendo um melhor
           controle da validade de seus produtos.
         </P>
-        <Link to="about" smooth={true}>
-          <Anchor
-            borderRadius={2}
-            border="1px solid var(--blue-normal)"
-            height={3}
-            width={20}
-            fontWeight={500}
-            padding="0.5rem 2rem"
-            animationBackground={true}
-            aria-label="link para conhecer o sistema GVP"
-          >
-            Quero conhecer
-          </Anchor>
-        </Link>
+        <Anchor
+          to="about"
+          smooth={true}
+          borderRadius={2}
+          border="1px solid var(--blue-normal)"
+          height={3}
+          width={20}
+          fontWeight={500}
+          padding="0.5rem 2rem"
+          animationBackground={true}
+          aria-label="link para conhecer o sistema GVP"
+        >
+          Quero conhecer
+        </Anchor>
         <Img
           src="/assets/vetor_home.svg"
           alt="Imagem ilustrativa de um sistema de controle"
@@ -127,26 +137,39 @@ export const Main = () => {
           <ButtonClose onClick={() => setActiveMenu(false)}>
             <FiXCircle />
           </ButtonClose>
-          <Link to="home" smooth={true}>
-            <Anchor animationScaleX={true} aria-label="Anchor para inicio">
-              Inicio
-            </Anchor>
-          </Link>
-          <Link to="about" smooth={true}>
-            <Anchor animationScaleX={true} aria-label="Anchor para sobre">
-              Sobre
-            </Anchor>
-          </Link>
-          <Link to="services" smooth={true}>
-            <Anchor animationScaleX={true} aria-label="Anchor para serviços">
-              Serviços
-            </Anchor>
-          </Link>
-          <Link to="plans" smooth={true}>
-            <Anchor animationScaleX={true} aria-label="Anchor para planos">
-              Planos
-            </Anchor>
-          </Link>
+          <Anchor
+            to="home"
+            smooth={true}
+            animationScaleX={true}
+            aria-label="Anchor para inicio"
+          >
+            Inicio
+          </Anchor>
+
+          <Anchor
+            to="about"
+            smooth={true}
+            animationScaleX={true}
+            aria-label="Anchor para sobre"
+          >
+            Sobre
+          </Anchor>
+          <Anchor
+            to="services"
+            smooth={true}
+            animationScaleX={true}
+            aria-label="Anchor para serviços"
+          >
+            Serviços
+          </Anchor>
+          <Anchor
+            to="plans"
+            smooth={true}
+            animationScaleX={true}
+            aria-label="Anchor para planos"
+          >
+            Planos
+          </Anchor>
         </MenuMobile>
       )}
     </Container>

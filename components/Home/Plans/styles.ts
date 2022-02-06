@@ -79,14 +79,14 @@ export const Card = styled.article`
   }
 
   @media screen and (max-width: 345px) {
-    & p:nth-child(3) {
+    & > p {
       margin-top: 1rem;
       max-width: 100%;
     }
   }
 
   @media screen and (max-width: 300px) {
-    & p:nth-child(3) {
+    & > p {
       margin-top: 4rem;
       max-width: 100%;
     }

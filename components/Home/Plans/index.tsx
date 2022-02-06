@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import {
   Container,
   ContainerTextPlans,
@@ -50,20 +49,17 @@ export const Plans = () => {
           clientes. Aproveite!!!
         </P>
         <Strong cor="var(--white)">R$ 20,99</Strong>
-
-        <Link href="/#" passHref={true}>
-          <Anchor
-            background="var(--blue-normal)"
-            border="1px solid var(--blue-normal)"
-            borderRadius={2}
-            borderReverse={true}
-            borderHover="var(--white)"
-            size="var(--size-sm)"
-            padding="0.5rem 2.5rem"
-          >
-            Assinar
-          </Anchor>
-        </Link>
+        <Anchor
+          to="/#"
+          background="var(--blue-normal)"
+          border="1px solid var(--blue-normal)"
+          borderRadius={2}
+          borderReverse={true}
+          borderHover="var(--white)"
+          padding="0.5rem 2.5rem"
+        >
+          Assinar
+        </Anchor>
       </Card>
     </Container>
   )

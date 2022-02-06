@@ -112,7 +112,7 @@ export const ContainerMain = styled.div<{
       text-align: center;
     }
 
-    & a::first-of-type {
+    & > a {
       margin-top: 3rem;
       font-size: 1.1rem;
       width: 100%;
