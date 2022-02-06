@@ -43,6 +43,7 @@ export const NavbarSecundary = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
   @media screen and (max-width: 1000px) {
     display: none;
   }
@@ -77,6 +78,10 @@ export const ContainerMain = styled.div<{
   background-size: 60%;
   background-repeat: no-repeat;
 
+  & a {
+    margin-top: 2rem;
+  }
+
   @media screen and (min-width: 600px) and (max-width: 1000px) {
     background-position: 130% 30%;
     background-size: 70%;
@@ -91,7 +96,7 @@ export const ContainerMain = styled.div<{
       text-align: center;
     }
 
-    & a:first-of-type {
+    & a::first-of-type {
       margin-top: 3rem;
       font-size: 1.1rem;
       width: 80%;
@@ -107,7 +112,7 @@ export const ContainerMain = styled.div<{
       text-align: center;
     }
 
-    & a:first-of-type {
+    & a::first-of-type {
       margin-top: 3rem;
       font-size: 1.1rem;
       width: 100%;

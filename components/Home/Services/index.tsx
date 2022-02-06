@@ -1,15 +1,17 @@
-import { Container, Carousel, Slider, ContentText } from './styles'
+import {
+  Container,
+  Carousel,
+  Slider,
+  ContentText,
+  ContentImageGroup,
+  Img
+} from './styles'
 import { P, H5 } from '../../../styles/home'
 import { FiLock } from 'react-icons/fi'
-import imageWave from '../../../public/assets/wave.svg'
-import imageGroupChat from '../../../public/assets/vetor_services.svg'
 
 export const Services = () => {
-  const wave: string = imageWave.src
-  const groupChat: string = imageGroupChat.src
-
   return (
-    <Container Wave={wave} Illustration={groupChat}>
+    <Container id="services">
       <Carousel>
         <Slider>
           <FiLock />
@@ -20,6 +22,13 @@ export const Services = () => {
           </P>
         </Slider>
       </Carousel>
+
+      <ContentImageGroup>
+        <Img
+          src="/assets/vetor_services.svg"
+          alt="Imagem de equipe testando o nosso sistema"
+        />
+      </ContentImageGroup>
 
       <ContentText>
         <H5>Serviços</H5>

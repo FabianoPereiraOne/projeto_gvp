@@ -1,14 +1,10 @@
 import styled from 'styled-components'
 
-export const Container = styled.section<{
-  Illustration: string
-  Wave: string
-}>`
+export const Container = styled.section`
   margin-top: 5rem;
   width: 100%;
   min-height: 100vh;
-  background: url(${props => props.Illustration && props.Illustration}),
-    url(${props => props.Wave && props.Wave});
+  background: url('/assets/vetor_services.svg'), url('/assets/wave.svg');
   background-position: left 110%, bottom;
   background-size: 45rem auto, cover;
   background-repeat: no-repeat;
@@ -19,7 +15,7 @@ export const Container = styled.section<{
   z-index: 2;
 
   @media screen and (max-width: 1430px) {
-    background: url(${props => props.Illustration && props.Illustration}),
+    background: url('/assets/vetor_services.svg'),
       url('/assets/vetor_services_responsive_3.svg');
     background-position: left 110%, bottom;
     background-size: 45rem auto, cover;
@@ -36,9 +32,15 @@ export const Container = styled.section<{
   }
 
   @media screen and (max-width: 600px) {
-    background-position: center 60%, bottom;
-    background-size: 25rem auto, cover;
-    min-height: 150vh;
+    background: url('/assets/vetor_services_responsive_3.svg');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-end;
   }
 `
 
@@ -100,5 +102,27 @@ export const ContentText = styled.div`
   }
 
   @media screen and (max-width: 600px) {
+    margin-top: 1rem;
+    display: block;
+    position: relative;
+  }
+`
+
+export const ContentImageGroup = styled.div`
+  display: none;
+
+  @media screen and (max-width: 600px) {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 12rem;
+  }
+`
+export const Img = styled.img`
+  display: none;
+
+  @media screen and (max-width: 600px) {
+    max-width: 100%;
+    display: block;
   }
 `

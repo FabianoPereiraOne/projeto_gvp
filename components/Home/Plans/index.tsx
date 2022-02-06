@@ -11,7 +11,7 @@ import { FiAward, FiCheckCircle } from 'react-icons/fi'
 
 export const Plans = () => {
   return (
-    <Container>
+    <Container id="plans">
       <ContainerTextPlans>
         <H5>Planos</H5>
         <P color="var(--blue-light)">Conheças nossos planos.</P>
@@ -53,7 +53,7 @@ export const Plans = () => {
         </P>
         <Strong cor="var(--white)">R$ 20,99</Strong>
 
-        <Link href="buy">
+        <Link href="/#">
           <Anchor
             background="var(--blue-normal)"
             border="1px solid var(--blue-normal)"

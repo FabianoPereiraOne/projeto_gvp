@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import * as Scroll from 'react-scroll'
 import {
   Container,
   ContainerLogo,
@@ -18,15 +18,16 @@ import {
 import { Anchor, P } from '../../../styles/home'
 import { FaRegCalendarAlt } from 'react-icons/fa'
 import { FiCornerRightUp, FiAlignJustify, FiXCircle } from 'react-icons/fi'
-import imageBackground from '../../../public/assets/vetor_home.svg'
 import { useState } from 'react'
+import imageBackground from '../../../public/assets/vetor_home.svg'
 
 export const Main = () => {
-  const background = imageBackground.src
   const [activeMenu, setActiveMenu] = useState(false)
+  const background = imageBackground.src
+  const Link = Scroll.Link
 
   return (
-    <Container>
+    <Container id="home">
       <Header>
         <ContainerLogo>
           <FaRegCalendarAlt />
@@ -34,29 +35,29 @@ export const Main = () => {
         </ContainerLogo>
 
         <Navbar>
-          <Link href="home">
+          <Link to="home" smooth={true}>
             <Anchor animationScaleX={true} aria-label="Anchor para inicio">
               Inicio
             </Anchor>
           </Link>
-          <Link href="about">
+          <Link to="about" smooth={true}>
             <Anchor animationScaleX={true} aria-label="Anchor para sobre">
               Sobre
             </Anchor>
           </Link>
-          <Link href="services">
+          <Link to="services" smooth={true}>
             <Anchor animationScaleX={true} aria-label="Anchor para serviços">
               Serviços
             </Anchor>
           </Link>
-          <Link href="plans">
+          <Link to="plans" smooth={true}>
             <Anchor animationScaleX={true} aria-label="Anchor para planos">
               Planos
             </Anchor>
           </Link>
         </Navbar>
         <NavbarSecundary>
-          <Link href="/login">
+          <Link to="/#">
             <Anchor
               animationScaleX={false}
               borderBottom="1px solid var(--white)"
@@ -65,7 +66,7 @@ export const Main = () => {
               Acessar
             </Anchor>
           </Link>
-          <Link href="/register">
+          <Link to="/#">
             <Anchor
               fontWeight={500}
               border={'1px solid var(--blue-normal)'}
@@ -96,11 +97,10 @@ export const Main = () => {
           Forneça uma melhor experiência aos seus clientes fazendo um melhor
           controle da validade de seus produtos.
         </P>
-        <Link href="about">
+        <Link to="about" smooth={true}>
           <Anchor
             borderRadius={2}
             border="1px solid var(--blue-normal)"
-            marginTop={2}
             height={3}
             width={20}
             fontWeight={500}
@@ -116,7 +116,7 @@ export const Main = () => {
           alt="Imagem ilustrativa de um sistema de controle"
         />
 
-        <Link href="home">
+        <Link to="home" smooth={true}>
           <Circle>
             <FiCornerRightUp />
           </Circle>
@@ -127,22 +127,22 @@ export const Main = () => {
           <ButtonClose onClick={() => setActiveMenu(false)}>
             <FiXCircle />
           </ButtonClose>
-          <Link href="home">
+          <Link to="home" smooth={true}>
             <Anchor animationScaleX={true} aria-label="Anchor para inicio">
               Inicio
             </Anchor>
           </Link>
-          <Link href="about">
+          <Link to="about" smooth={true}>
             <Anchor animationScaleX={true} aria-label="Anchor para sobre">
               Sobre
             </Anchor>
           </Link>
-          <Link href="services">
+          <Link to="services" smooth={true}>
             <Anchor animationScaleX={true} aria-label="Anchor para serviços">
               Serviços
             </Anchor>
           </Link>
-          <Link href="plans">
+          <Link to="plans" smooth={true}>
             <Anchor animationScaleX={true} aria-label="Anchor para planos">
               Planos
             </Anchor>

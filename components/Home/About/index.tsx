@@ -1,11 +1,13 @@
 import groupTi from '../../../public/assets/vetor_about.svg'
 import { Container, ContainerTextAbout, Img } from './styles'
 import { Anchor, H5, P } from '../../../styles/home'
-import Link from 'next/link'
+import * as Scroll from 'react-scroll'
 
 export const About = () => {
+  const Link = Scroll.Link
+
   return (
-    <Container>
+    <Container id="about">
       <Img
         src={groupTi.src}
         alt="Imagem de jovens de tecnologia trabalhando."
@@ -29,7 +31,7 @@ export const About = () => {
           produtos. Forneça uma melhor experiência aos seus clientes fazendo um
           melhor controle d.
         </P>
-        <Link href="plans">
+        <Link to="plans" smooth={true}>
           <Anchor
             borderRadius={2}
             background="var(--blue-normal)"

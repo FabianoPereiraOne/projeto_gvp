@@ -44,6 +44,10 @@ export const ContainerTextAbout = styled.main`
     text-overflow: ellipsis;
   }
 
+  & a {
+    margin-top: 2rem;
+  }
+
   @media screen and (max-width: 1200px) {
     width: 100%;
   }
