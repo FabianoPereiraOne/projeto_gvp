@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import * as Scroll from 'react-scroll'
-const Link = Scroll.Link
+const ScrollLink = Scroll.Link
 
 export const Strong = styled.strong<{
   size?: number | string
@@ -14,7 +14,105 @@ export const Strong = styled.strong<{
   color: ${props => (props.cor ? props.cor : 'var(--white)')};
 `
 
-export const Anchor = styled(Link)<{
+export const Anchor = styled.a<{
+  marginTop?: number
+  marginBottom?: number
+  marginLeft?: number
+  marginRight?: number
+  width?: number
+  height?: number
+  padding?: string
+  size?: string
+  color?: string
+  background?: string
+  border?: string
+  colorHover?: string
+  backgroundHover?: string
+  animationScaleX?: boolean
+  borderBottom?: string
+  borderLeft?: string
+  borderRight?: string
+  borderTop?: string
+  borderRadius?: number
+  animationBackground?: boolean
+  borderReverse?: boolean
+  borderHover?: string
+  fontWeight?: number
+}>`
+  width: ${props => (props.width ? `${props.width}rem` : 'auto')};
+  height: ${props => (props.height ? `${props.height}rem` : 'auto')};
+  background: ${props => (props.background ? props.background : 'none')};
+  padding: ${props => (props.padding ? props.padding : 0)};
+  margin-top: ${props => (props.marginTop ? `${props.marginTop}rem` : 0)};
+  margin-bottom: ${props =>
+    props.marginBottom ? `${props.marginBottom}rem` : 0};
+  margin-left: ${props => (props.marginLeft ? `${props.marginLeft}rem` : 0)};
+  margin-right: ${props => (props.marginRight ? `${props.marginRight}rem` : 0)};
+  text-transform: uppercase;
+  font-weight: ${props => (props.fontWeight ? props.fontWeight : 400)};
+  color: ${props => (props.color ? props.color : 'var(--white)')};
+  font-size: ${props => (props.size ? props.size : '1.4rem')};
+  transition: 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  ${props => props.borderBottom && `border-bottom: ${props.borderBottom};`}
+  ${props => props.borderLeft && `border-left: ${props.borderLeft};`}
+  ${props => props.borderRight && `border-right: ${props.borderRight};`}
+  ${props => props.borderTop && `border-top: ${props.borderTop};`}
+  ${props => props.border && `  border:${props.border};`}
+  ${props => props.borderRadius && `border-radius: ${props.borderRadius}rem;`}
+
+  ${props =>
+    props.animationScaleX &&
+    `&:hover::after {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+  
+    &:after {
+      content: '';
+      width: 100%;
+      height: 0.1rem;
+      background-color: var(--orange-normal);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s;
+      border-radius: 0.2rem;
+    }`}
+
+  ${props =>
+    props.animationBackground &&
+    `&:hover {
+      background-color: var(--blue-normal);
+      border: 1px solid var(--blue-normal);
+      color: ${props.colorHover};
+    }`}
+
+
+    ${props =>
+    props.borderReverse &&
+    `
+    &:hover { 
+      border: 1px solid var(--blue-normal);
+      background: none; 
+      color: ${props.colorHover};
+    }
+    `}
+
+
+    @media screen and (min-width:900px) and (max-width:1201px) {
+    font-size: ${props => (props.size ? props.size : '1.2rem')};
+  }
+`
+
+export const LinkRedirect = styled(ScrollLink)<{
   marginTop?: number
   marginBottom?: number
   marginLeft?: number

@@ -1,6 +1,6 @@
 import groupTi from '../../../public/assets/vetor_about.svg'
 import { Container, ContainerTextAbout, Img } from './styles'
-import { Anchor, H5, P } from '../../../styles/home'
+import { LinkRedirect, H5, P } from '../../../styles/home'
 
 export const About = () => {
   return (
@@ -26,7 +26,7 @@ export const About = () => {
           da validade dos produtos fazendo com que o consumidor final tenha um
           produto de qualidade e certificação.
         </P>
-        <Anchor
+        <LinkRedirect
           to="plans"
           smooth={true}
           borderRadius={2}
@@ -43,7 +43,7 @@ export const About = () => {
           aria-label="link para conhecer o sistema GVP"
         >
           Conhecer planos
-        </Anchor>
+        </LinkRedirect>
       </ContainerTextAbout>
     </Container>
   )

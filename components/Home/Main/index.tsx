@@ -1,4 +1,3 @@
-import * as Scroll from 'react-scroll'
 import {
   Container,
   ContainerLogo,
@@ -15,16 +14,16 @@ import {
   MenuMobile,
   ButtonClose
 } from './styles'
-import { Anchor, P } from '../../../styles/home'
+import { Anchor, LinkRedirect, P } from '../../../styles/home'
 import { FaRegCalendarAlt } from 'react-icons/fa'
 import { FiCornerRightUp, FiAlignJustify, FiXCircle } from 'react-icons/fi'
 import { useState } from 'react'
+import Link from 'next/link'
 import imageBackground from '../../../public/assets/vetor_home.svg'
 
 export const Main = () => {
   const [activeMenu, setActiveMenu] = useState(false)
   const background = imageBackground.src
-  const Link = Scroll.Link
 
   return (
     <Container id="home">
@@ -35,61 +34,63 @@ export const Main = () => {
         </ContainerLogo>
 
         <Navbar>
-          <Anchor
+          <LinkRedirect
             to="home"
             smooth={true}
             animationScaleX={true}
-            aria-label="Anchor para inicio"
+            aria-label="Link para inicio"
           >
             Inicio
-          </Anchor>
-          <Anchor
+          </LinkRedirect>
+          <LinkRedirect
             to="about"
             smooth={true}
             animationScaleX={true}
-            aria-label="Anchor para sobre"
+            aria-label="Link para sobre"
           >
             Sobre
-          </Anchor>
-          <Anchor
+          </LinkRedirect>
+          <LinkRedirect
             to="services"
             smooth={true}
             animationScaleX={true}
-            aria-label="Anchor para serviços"
+            aria-label="Link para serviços"
           >
             Serviços
-          </Anchor>
-          <Anchor
+          </LinkRedirect>
+          <LinkRedirect
             to="plans"
             smooth={true}
             animationScaleX={true}
-            aria-label="Anchor para planos"
+            aria-label="Link para planos"
           >
             Planos
-          </Anchor>
+          </LinkRedirect>
         </Navbar>
         <NavbarSecundary>
-          <Anchor
-            to="#"
-            borderBottom="1px solid var(--white)"
-            animationScaleX={false}
-            aria-label="Anchor para acessar painel"
-          >
-            Acessar
-          </Anchor>
-          <Anchor
-            to="/#"
-            border="1px solid var(--blue-normal)"
-            fontWeight={500}
-            borderReverse={true}
-            background="var(--blue-normal)"
-            borderRadius={2}
-            marginLeft={1}
-            padding="0.5rem 2rem"
-            aria-label="Anchor para se registrar"
-          >
-            Registrar
-          </Anchor>
+          <Link href="/login">
+            <Anchor
+              borderBottom="1px solid var(--white)"
+              animationScaleX={false}
+              aria-label="Link para acessar painel"
+            >
+              Acessar
+            </Anchor>
+          </Link>
+          <Link href="/register-payment">
+            <Anchor
+              border="1px solid var(--blue-normal)"
+              fontWeight={500}
+              borderReverse={true}
+              background="var(--blue-normal)"
+              borderRadius={2}
+              marginLeft={1}
+              padding="0.5rem 2rem"
+              aria-label="Link para se registrar"
+            >
+              Registrar
+            </Anchor>
+          </Link>
         </NavbarSecundary>
 
         <ButtonMenu onClick={() => setActiveMenu(true)}>
@@ -107,7 +108,7 @@ export const Main = () => {
           Forneça uma melhor experiência aos seus clientes fazendo um melhor
           controle da validade de seus produtos.
         </P>
-        <Anchor
+        <LinkRedirect
           to="about"
           smooth={true}
           borderRadius={2}
@@ -117,59 +118,59 @@ export const Main = () => {
           fontWeight={500}
           padding="0.5rem 2rem"
           animationBackground={true}
-          aria-label="link para conhecer o sistema GVP"
+          aria-label="Link para conhecer o sistema GVP"
         >
           Quero conhecer
-        </Anchor>
+        </LinkRedirect>
         <Img
           src="/assets/vetor_home.svg"
           alt="Imagem ilustrativa de um sistema de controle"
         />
 
-        <Link to="home" smooth={true}>
+        <LinkRedirect to="home" smooth={true}>
           <Circle>
             <FiCornerRightUp />
           </Circle>
-        </Link>
+        </LinkRedirect>
       </ContainerMain>
       {activeMenu && (
         <MenuMobile>
           <ButtonClose onClick={() => setActiveMenu(false)}>
             <FiXCircle />
           </ButtonClose>
-          <Anchor
+          <LinkRedirect
             to="home"
             smooth={true}
             animationScaleX={true}
-            aria-label="Anchor para inicio"
+            aria-label="Link para inicio"
           >
             Inicio
-          </Anchor>
+          </LinkRedirect>
 
-          <Anchor
+          <LinkRedirect
             to="about"
             smooth={true}
             animationScaleX={true}
-            aria-label="Anchor para sobre"
+            aria-label="Link para sobre"
           >
             Sobre
-          </Anchor>
-          <Anchor
+          </LinkRedirect>
+          <LinkRedirect
             to="services"
             smooth={true}
             animationScaleX={true}
-            aria-label="Anchor para serviços"
+            aria-label="Link para serviços"
           >
             Serviços
-          </Anchor>
-          <Anchor
+          </LinkRedirect>
+          <LinkRedirect
             to="plans"
             smooth={true}
             animationScaleX={true}
-            aria-label="Anchor para planos"
+            aria-label="Link para planos"
           >
             Planos
-          </Anchor>
+          </LinkRedirect>
         </MenuMobile>
       )}
     </Container>
