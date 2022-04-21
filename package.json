@@ -9,9 +9,12 @@
   },
   "dependencies": {
     "@stripe/stripe-js": "^1.22.0",
+    "@types/firebase": "^3.2.1",
     "@types/react-icons": "^3.0.0",
     "@types/react-scroll": "^1.8.3",
     "@types/stripe": "^8.0.417",
+    "@types/styled-components": "^5.1.25",
+    "firebase": "^9.6.11",
     "next": "12.0.7",
     "pure-react-carousel": "^1.28.0",
     "react": "17.0.2",
@@ -19,7 +22,8 @@
     "react-icons": "^4.3.1",
     "react-scroll": "^1.8.4",
     "stripe": "^8.195.0",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "toastify": "^2.0.1"
   },
   "devDependencies": {
     "@types/node": "17.0.8",

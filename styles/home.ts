@@ -2,19 +2,7 @@ import styled from 'styled-components'
 import * as Scroll from 'react-scroll'
 const ScrollLink = Scroll.Link
 
-export const Strong = styled.strong<{
-  size?: number | string
-  cor?: string
-}>`
-  text-transform: uppercase;
-  font-family: var(--font-primary), sans-serif;
-  font-size: ${props => (props.size ? `${props.size}rem` : 'var(--size-l)')};
-  margin-top: 0.4rem;
-  font-weight: normal;
-  color: ${props => (props.cor ? props.cor : 'var(--white)')};
-`
-
-export const Anchor = styled.a<{
+type TypePropsLink = {
   marginTop?: number
   marginBottom?: number
   marginLeft?: number
@@ -38,7 +26,21 @@ export const Anchor = styled.a<{
   borderReverse?: boolean
   borderHover?: string
   fontWeight?: number
+}
+
+export const Strong = styled.strong<{
+  size?: number | string
+  cor?: string
 }>`
+  text-transform: uppercase;
+  font-family: var(--font-primary), sans-serif;
+  font-size: ${props => (props.size ? `${props.size}rem` : 'var(--size-l)')};
+  margin-top: 0.4rem;
+  font-weight: normal;
+  color: ${props => (props.cor ? props.cor : 'var(--white)')};
+`
+
+export const Anchor = styled.a<TypePropsLink>`
   width: ${props => (props.width ? `${props.width}rem` : 'auto')};
   height: ${props => (props.height ? `${props.height}rem` : 'auto')};
   background: ${props => (props.background ? props.background : 'none')};
@@ -70,7 +72,7 @@ export const Anchor = styled.a<{
       -webkit-transform: scaleX(1);
       transform: scaleX(1);
     }
-  
+
     &:after {
       content: '';
       width: 100%;
@@ -95,48 +97,22 @@ export const Anchor = styled.a<{
       color: ${props.colorHover};
     }`}
 
-
     ${props =>
     props.borderReverse &&
     `
-    &:hover { 
+    &:hover {
       border: 1px solid var(--blue-normal);
-      background: none; 
+      background: none;
       color: ${props.colorHover};
     }
     `}
-
 
     @media screen and (min-width:900px) and (max-width:1201px) {
     font-size: ${props => (props.size ? props.size : '1.2rem')};
   }
 `
 
-export const LinkRedirect = styled(ScrollLink)<{
-  marginTop?: number
-  marginBottom?: number
-  marginLeft?: number
-  marginRight?: number
-  width?: number
-  height?: number
-  padding?: string
-  size?: string
-  color?: string
-  background?: string
-  border?: string
-  colorHover?: string
-  backgroundHover?: string
-  animationScaleX?: boolean
-  borderBottom?: string
-  borderLeft?: string
-  borderRight?: string
-  borderTop?: string
-  borderRadius?: number
-  animationBackground?: boolean
-  borderReverse?: boolean
-  borderHover?: string
-  fontWeight?: number
-}>`
+export const LinkRedirect = styled(ScrollLink)<TypePropsLink>`
   width: ${props => (props.width ? `${props.width}rem` : 'auto')};
   height: ${props => (props.height ? `${props.height}rem` : 'auto')};
   background: ${props => (props.background ? props.background : 'none')};
