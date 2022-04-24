@@ -3,7 +3,7 @@ import { useAuthContext } from '../context/authContext'
 import { Form, FormGroup, Label, ButtonSubmit, Input } from '../styles/register'
 import { parseCookies } from 'nookies'
 import { GetServerSideProps } from 'next'
-import { Head } from 'next/document'
+import Head from 'next/head'
 
 const Register = ctx => {
   const [email, setEmail] = useState('')

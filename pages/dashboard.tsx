@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next'
-import { Head } from 'next/document'
 import { parseCookies } from 'nookies'
 import { useAuthContext } from '../context/authContext'
+import Head from 'next/head'
 
 const dashboard = () => {
   const { handleSignOut } = useAuthContext()

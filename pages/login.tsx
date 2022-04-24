@@ -3,6 +3,7 @@ import { parseCookies } from 'nookies'
 import { FormEvent, useState } from 'react'
 import { useAuthContext } from '../context/authContext'
 import { Form, FormGroup, Label, Input, ButtonSubmit } from '../styles/login'
+import Head from 'next/head'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -25,6 +26,9 @@ const Login = () => {
 
   return (
     <>
+      <Head>
+        <title>GVP | Entrar no sistema</title>
+      </Head>
       <Form onSubmit={handleLogin}>
         <FormGroup>
           <Label>Email</Label>
