@@ -4,7 +4,6 @@ export type AuthContextTypes = {
   handleSignUp: (email: string, password: string) => Promise<void>
   handleSignIn: (email: string, password: string) => Promise<void>
   handleSignOut: () => Promise<void>
-  isAutenticated: boolean
 }
 
 export type AuthContextProviderTypes = {
