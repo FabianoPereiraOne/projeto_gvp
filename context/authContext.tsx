@@ -4,22 +4,28 @@ import {
   AuthContextProviderTypes,
   AuthContextTypes
 } from '../types/contextTypes'
+import { toast } from 'react-toastify'
 
 export const AuthContext = createContext({} as AuthContextTypes)
 export const useAuthContext = () => useContext(AuthContext)
 
 const AuthContextProvider = ({ children }: AuthContextProviderTypes) => {
   const handleSignUp = async (email: string, password: string) => {
-    await fetch('/api/registerUser', {
+    const response = await fetch('/api/registerUser', {
       method: 'POST',
       body: JSON.stringify({
         email,
         password: await hash(password, 8)
       })
-    }).then(async response => {
-      const token = await response.json()
-      console.log(token)
     })
+    const { token, isFailed, message } = await response.json()
+
+    if (isFailed) {
+      toast(message)
+      return
+    }
+
+    console.log(token)
   }
 
   const handleSignIn = async (email: string, password: string) => {}
