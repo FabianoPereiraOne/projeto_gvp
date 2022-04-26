@@ -4,9 +4,7 @@ import { sign } from 'jsonwebtoken'
 
 export default async (request: NextApiRequest, response: NextApiResponse) => {
   if (request.method !== 'POST') {
-    response.status(405).json({
-      message: 'Method Not Allowed!'
-    })
+    throw new Error('Metodo não aceito!')
   }
 
   const { email, password } = JSON.parse(request.body)
@@ -19,10 +17,11 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
   })
 
   if (!!isExistsUserEmail) {
-    return response.status(404).json({
-      message: 'user already exists!',
-      isFailed: false
+    const errorMessage = 'Usuario já existe!'
+    response.json({
+      errorMessage
     })
+    throw new Error(errorMessage)
   }
 
   prisma.user
@@ -35,20 +34,19 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
     .then(user => {
       const { id } = user
       const token = sign({}, process.env.NEXT_PUBLIC_VERCEL_SECRET_KEY, {
-        expiresIn: '10S',
+        expiresIn: '3600s',
         subject: id
       })
 
       return response.status(200).json({
-        token,
-        message: 'Token generation was successful!',
-        isFailed: false
+        token
       })
     })
     .catch(() => {
-      return response.status(200).json({
-        message: 'Error create user!',
-        isFailed: true
+      const errorMessage = 'Falha ao criar usuario!'
+      response.json({
+        errorMessage
       })
+      throw new Error(errorMessage)
     })
 }

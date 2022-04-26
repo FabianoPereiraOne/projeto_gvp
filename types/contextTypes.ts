@@ -8,4 +8,5 @@ export type AuthContextTypes = {
 
 export type AuthContextProviderTypes = {
   children: ReactNode
+  context: any
 }

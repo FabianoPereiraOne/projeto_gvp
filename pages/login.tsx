@@ -1,9 +1,10 @@
 import { GetServerSideProps } from 'next'
-import { parseCookies } from 'nookies'
 import { FormEvent, useState } from 'react'
 import { useAuthContext } from '../context/authContext'
 import { Form, FormGroup, Label, Input, ButtonSubmit } from '../styles/login'
 import Head from 'next/head'
+import { parseCookies, destroyCookie } from 'nookies'
+import { verify } from 'jsonwebtoken'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -14,11 +15,7 @@ const Login = () => {
   const handleLogin = (event: FormEvent) => {
     event.preventDefault()
     if (email.length > 0 && password.length > 0) {
-      try {
-        handleSignIn(email, password)
-      } catch (error) {
-        console.log(error)
-      }
+      handleSignIn(email, password)
     } else {
       alert('Preencha todos os campos!')
     }
@@ -54,9 +51,21 @@ const Login = () => {
 
 export default Login
 
-export const getServerSideProps: GetServerSideProps = async ctx => {
-  const cookies = parseCookies(ctx)
-  if (cookies['auth.TokenAccess']) {
+export const getServerSideProps: GetServerSideProps = async context => {
+  const cookies = parseCookies(context)
+
+  if (cookies['auth.tokenAccess']) {
+    try {
+      verify(
+        cookies['auth.tokenAccess'],
+        process.env.NEXT_PUBLIC_VERCEL_SECRET_KEY
+      )
+    } catch (error) {
+      console.log(error)
+      destroyCookie(context, 'auth.tokenAccess')
+      return
+    }
+
     return {
       redirect: {
         permanent: false,
