@@ -3,7 +3,7 @@ import { compare } from 'bcryptjs'
 import { sign } from 'jsonwebtoken'
 import { NextApiRequest, NextApiResponse } from 'next'
 
-export default async (request: NextApiRequest, response: NextApiResponse) => {
+const signIn = async (request: NextApiRequest, response: NextApiResponse) => {
   if (request.method !== 'POST') {
     throw new Error('Metodo não aceito!')
   }
@@ -35,3 +35,5 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
     token
   })
 }
+
+export default signIn

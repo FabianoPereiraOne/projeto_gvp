@@ -3,14 +3,14 @@ import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import { destroyCookie, parseCookies } from 'nookies'
 import { FormEvent, useState } from 'react'
-import { useAuthContext } from '../context/authContext'
+import { UseAuthContext } from '../context/authContext'
 import { ButtonSubmit, Form, FormGroup, Input, Label } from '../styles/login'
 
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const { handleSignIn } = useAuthContext()
+  const { handleSignIn } = UseAuthContext()
 
   const handleLogin = (event: FormEvent) => {
     event.preventDefault()

@@ -1,13 +1,13 @@
+import Link from 'next/link'
+import { FiAward, FiCheckCircle } from 'react-icons/fi'
+import { Anchor, H5, P, Strong } from '../../../styles/home'
 import {
+  Card,
   Container,
   ContainerTextPlans,
-  Card,
-  TitlePlans,
-  ContentBenefits
+  ContentBenefits,
+  TitlePlans
 } from './styles'
-import { P, H5, Strong, Anchor } from '../../../styles/home'
-import { FiAward, FiCheckCircle } from 'react-icons/fi'
-import Link from 'next/link'
 
 export const Plans = () => {
   return (
@@ -50,7 +50,7 @@ export const Plans = () => {
           clientes. Aproveite!!!
         </P>
         <Strong $cor="var(--white)">R$ 20,99</Strong>
-        <Link href="/register-payment">
+        <Link href="/register-payment" passHref>
           <Anchor
             $background="var(--blue-normal)"
             $border="1px solid var(--blue-normal)"

@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { destroyCookie, parseCookies } from 'nookies'
 import { FormEvent, useState } from 'react'
 import { toast } from 'react-toastify'
-import { useAuthContext } from '../context/authContext'
+import { UseAuthContext } from '../context/authContext'
 import { ButtonSubmit, Form, FormGroup, Input, Label } from '../styles/register'
 
 const Register = () => {
@@ -14,7 +14,7 @@ const Register = () => {
   const [password, setPassword] = useState<string>('')
   const [loading, setLoading] = useState<boolean>(false)
 
-  const { handleSignUp } = useAuthContext()
+  const { handleSignUp } = UseAuthContext()
 
   const handleRegister = (event: FormEvent) => {
     event.preventDefault()

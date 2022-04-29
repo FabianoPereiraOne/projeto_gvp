@@ -9,7 +9,7 @@ import {
 } from '../types/contextTypes'
 
 export const AuthContext = createContext({} as AuthContextTypes)
-export const useAuthContext = () => useContext(AuthContext)
+export const UseAuthContext = () => useContext(AuthContext)
 
 const AuthContextProvider = ({
   children,

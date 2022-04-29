@@ -2,7 +2,7 @@ import { PrismaClient } from '@prisma/client'
 import { sign } from 'jsonwebtoken'
 import { NextApiRequest, NextApiResponse } from 'next'
 
-export default async (request: NextApiRequest, response: NextApiResponse) => {
+const signUp = async (request: NextApiRequest, response: NextApiResponse) => {
   if (request.method !== 'POST') {
     throw new Error('Metodo não aceito!')
   }
@@ -85,3 +85,5 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
       throw new Error(errorMessage)
     })
 }
+
+export default signUp

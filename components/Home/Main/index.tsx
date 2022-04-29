@@ -1,25 +1,25 @@
+import Link from 'next/link'
+import { useState } from 'react'
+import { FaRegCalendarAlt } from 'react-icons/fa'
+import { FiAlignJustify, FiCornerRightUp, FiXCircle } from 'react-icons/fi'
+import imageBackground from '../../../public/assets/vetor_home.svg'
+import { Anchor, LinkRedirect, P } from '../../../styles/home'
 import {
+  ButtonClose,
+  ButtonMenu,
+  Circle,
   Container,
   ContainerLogo,
-  Header,
-  NavbarSecundary,
-  Navbar,
   ContainerMain,
   H1,
-  Circle,
-  Span,
-  TextLogo,
-  ButtonMenu,
+  Header,
   Img,
   MenuMobile,
-  ButtonClose
+  Navbar,
+  NavbarSecundary,
+  Span,
+  TextLogo
 } from './styles'
-import { Anchor, LinkRedirect, P } from '../../../styles/home'
-import { FaRegCalendarAlt } from 'react-icons/fa'
-import { FiCornerRightUp, FiAlignJustify, FiXCircle } from 'react-icons/fi'
-import { useState } from 'react'
-import Link from 'next/link'
-import imageBackground from '../../../public/assets/vetor_home.svg'
 
 export const Main = () => {
   const [activeMenu, setActiveMenu] = useState(false)
@@ -68,7 +68,7 @@ export const Main = () => {
           </LinkRedirect>
         </Navbar>
         <NavbarSecundary>
-          <Link href="/login">
+          <Link href="/login" passHref>
             <Anchor
               $borderBottom="1px solid var(--white)"
               $animationScaleX={false}
@@ -77,7 +77,7 @@ export const Main = () => {
               Acessar
             </Anchor>
           </Link>
-          <Link href="/register">
+          <Link href="/register" passHref>
             <Anchor
               $border="1px solid var(--blue-normal)"
               $fontWeight={500}
@@ -171,7 +171,7 @@ export const Main = () => {
           >
             Planos
           </LinkRedirect>
-          <Link href="/login">
+          <Link href="/login" passHref>
             <Anchor
               $borderBottom="1px solid var(--white)"
               $animationScaleX={false}
@@ -180,7 +180,7 @@ export const Main = () => {
               Acessar
             </Anchor>
           </Link>
-          <Link href="/register">
+          <Link href="/register" passHref>
             <Anchor
               $border="1px solid var(--blue-normal)"
               $fontWeight={500}
