@@ -1,11 +1,12 @@
-import { GetServerSideProps } from 'next'
-import { parseCookies, destroyCookie } from 'nookies'
-import { useAuthContext } from '../context/authContext'
 import { verify } from 'jsonwebtoken'
+import { GetServerSideProps } from 'next'
 import Head from 'next/head'
+import { destroyCookie, parseCookies } from 'nookies'
+import { useAuthContext } from '../context/authContext'
 
 const dashboard = ctx => {
   const { handleSignOut } = useAuthContext()
+
   return (
     <div>
       <Head>

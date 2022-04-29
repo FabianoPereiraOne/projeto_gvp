@@ -1,10 +1,10 @@
+import { verify } from 'jsonwebtoken'
 import { GetServerSideProps } from 'next'
+import Head from 'next/head'
+import { destroyCookie, parseCookies } from 'nookies'
 import { FormEvent, useState } from 'react'
 import { useAuthContext } from '../context/authContext'
-import { Form, FormGroup, Label, Input, ButtonSubmit } from '../styles/login'
-import Head from 'next/head'
-import { parseCookies, destroyCookie } from 'nookies'
-import { verify } from 'jsonwebtoken'
+import { ButtonSubmit, Form, FormGroup, Input, Label } from '../styles/login'
 
 const Login = () => {
   const [email, setEmail] = useState('')

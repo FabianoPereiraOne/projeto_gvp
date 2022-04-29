@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client'
-import { NextApiRequest, NextApiResponse } from 'next'
 import { compare } from 'bcryptjs'
 import { sign } from 'jsonwebtoken'
+import { NextApiRequest, NextApiResponse } from 'next'
 
 export default async (request: NextApiRequest, response: NextApiResponse) => {
   if (request.method !== 'POST') {

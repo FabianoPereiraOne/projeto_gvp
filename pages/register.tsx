@@ -1,14 +1,16 @@
-import { FormEvent, useState } from 'react'
-import { useAuthContext } from '../context/authContext'
-import { Form, FormGroup, Label, ButtonSubmit, Input } from '../styles/register'
-import { GetServerSideProps } from 'next'
-import { toast } from 'react-toastify'
-import Head from 'next/head'
-import { parseCookies, destroyCookie } from 'nookies'
 import { verify } from 'jsonwebtoken'
+import { GetServerSideProps } from 'next'
+import Head from 'next/head'
+import { destroyCookie, parseCookies } from 'nookies'
+import { FormEvent, useState } from 'react'
+import { toast } from 'react-toastify'
+import { useAuthContext } from '../context/authContext'
+import { ButtonSubmit, Form, FormGroup, Input, Label } from '../styles/register'
 
 const Register = () => {
   const [email, setEmail] = useState<string>('')
+  const [name, setName] = useState<string>('')
+  const [surname, setSurname] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [loading, setLoading] = useState<boolean>(false)
 
@@ -17,8 +19,15 @@ const Register = () => {
   const handleRegister = (event: FormEvent) => {
     event.preventDefault()
     setLoading(true)
-    if (email.length > 0 && password.length > 0) {
-      handleSignUp(email, password).finally(() => setLoading(false))
+    if (
+      email.length > 0 &&
+      password.length > 0 &&
+      name.length > 0 &&
+      surname.length > 0
+    ) {
+      handleSignUp(email, password, name, surname).finally(() =>
+        setLoading(false)
+      )
     } else {
       toast.error('Preencha todos os campos!')
     }
@@ -30,6 +39,22 @@ const Register = () => {
         <title>GVP | Registre-se</title>
       </Head>
       <Form onSubmit={handleRegister}>
+        <FormGroup>
+          <Label>Nome</Label>
+          <Input
+            type="text"
+            value={name}
+            onChange={event => setName(event.target.value)}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label>Sobrenome</Label>
+          <Input
+            type="text"
+            value={surname}
+            onChange={event => setSurname(event.target.value)}
+          />
+        </FormGroup>
         <FormGroup>
           <Label>Email</Label>
           <Input

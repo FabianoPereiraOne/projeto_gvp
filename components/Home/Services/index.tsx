@@ -1,9 +1,9 @@
-import { Container, ContentText, ContentImageGroup, Img } from './styles'
-import { P, H5 } from '../../../styles/home'
-import { FiLock, FiDatabase, FiLayout } from 'react-icons/fi'
-import { CarouselProvider, Slider, Slide } from 'pure-react-carousel'
-import styles from './services.module.css'
+import { CarouselProvider, Slide, Slider } from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
+import { FiDatabase, FiLayout, FiLock } from 'react-icons/fi'
+import { H5, P } from '../../../styles/home'
+import styles from './services.module.css'
+import { Container, ContentImageGroup, ContentText, Img } from './styles'
 
 export const Services = () => {
   return (
@@ -22,20 +22,20 @@ export const Services = () => {
         <Slider className={styles.slider}>
           <Slide index={0} className={styles.slide}>
             <FiLock />
-            <P marginTop={0.3}>
+            <P $marginTop={0.3}>
               Fique tranquilo que a segurança de seus dados é nossa prioridade.
             </P>
           </Slide>
           <Slide index={1} className={styles.slide}>
             <FiDatabase />
-            <P marginTop={0.3}>
+            <P $marginTop={0.3}>
               Tenha acesso a grandes bancos de dados para armazenar todos os
               seus produtos e ter um facil acesso a ele.
             </P>
           </Slide>
           <Slide index={2} className={styles.slide}>
             <FiLayout />
-            <P marginTop={0.3}>
+            <P $marginTop={0.3}>
               Navegue por um sistema com design moderno, responsivo e que foi
               planejado para oferecer o melhor aos clientes.
             </P>
@@ -52,7 +52,7 @@ export const Services = () => {
 
       <ContentText>
         <H5>Serviços</H5>
-        <P color="var(--blue-light)">Veja nossos serviços.</P>
+        <P $color="var(--blue-light)">Veja nossos serviços.</P>
         <P>
           Nosso sistema possui o máximo de funcionalidades como: Sistema seguro,
           Layout responsivo e moderno, Banco de dados e outros. Tudo isso para

@@ -1,5 +1,8 @@
-import { createContext, useContext } from 'react'
 import { hash } from 'bcryptjs'
+import router from 'next/router'
+import { destroyCookie, setCookie } from 'nookies'
+import { createContext, useContext } from 'react'
+import { toast } from 'react-toastify'
 import {
   AuthContextProviderTypes,
   AuthContextTypes
@@ -7,24 +10,30 @@ import {
 
 export const AuthContext = createContext({} as AuthContextTypes)
 export const useAuthContext = () => useContext(AuthContext)
-import router from 'next/router'
-import { destroyCookie, setCookie } from 'nookies'
 
 const AuthContextProvider = ({
   children,
   context
 }: AuthContextProviderTypes) => {
-  const handleSignUp = async (email: string, password: string) => {
+  const handleSignUp = async (
+    email: string,
+    password: string,
+    name: string,
+    surname: string
+  ) => {
     const response = await fetch('/api/user/signUp', {
       method: 'POST',
       body: JSON.stringify({
         email,
-        password: await hash(password, 8)
+        password: await hash(password, 8),
+        name,
+        surname
       })
     })
     const { token, errorMessage } = await response.json()
 
     if (errorMessage) {
+      toast.error(errorMessage)
       return
     }
 
@@ -32,7 +41,9 @@ const AuthContextProvider = ({
       maxAge: 60 * 60 // 1 hour
     })
 
-    router.push('/dashboard')
+    router
+      .push('/dashboard')
+      .finally(() => toast.success(`Bem-vindo a dashboard ${name}!`))
   }
 
   const handleSignIn = async (email: string, password: string) => {
@@ -46,6 +57,7 @@ const AuthContextProvider = ({
     const { token, errorMessage } = await response.json()
 
     if (errorMessage) {
+      toast.error(errorMessage)
       return
     }
 
