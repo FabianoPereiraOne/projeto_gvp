@@ -3,8 +3,8 @@ import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import { destroyCookie, parseCookies } from 'nookies'
 import { FormEvent, useState } from 'react'
-import { UseAuthContext } from '../context/authContext'
-import { ButtonSubmit, Form, FormGroup, Input, Label } from '../styles/login'
+import { UseAuthContext } from '../../context/authContext'
+import { ButtonSubmit, Form, FormGroup, Input, Label } from '../../styles/login'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -69,7 +69,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     return {
       redirect: {
         permanent: false,
-        destination: '/dashboard'
+        destination: '/dashboard/initial'
       },
       props: {}
     }

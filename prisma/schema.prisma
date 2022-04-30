@@ -27,3 +27,13 @@ model Profile {
 
   @@map("Profiles")
 }
+
+model Product {
+  id        String   @id @default(uuid())
+  name      String
+  barCode   String
+  validity  String
+  createdAt DateTime @default(now())
+
+  @@map("Products")
+}

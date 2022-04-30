@@ -4,8 +4,14 @@ import Head from 'next/head'
 import { destroyCookie, parseCookies } from 'nookies'
 import { FormEvent, useState } from 'react'
 import { toast } from 'react-toastify'
-import { UseAuthContext } from '../context/authContext'
-import { ButtonSubmit, Form, FormGroup, Input, Label } from '../styles/register'
+import { UseAuthContext } from '../../context/authContext'
+import {
+  ButtonSubmit,
+  Form,
+  FormGroup,
+  Input,
+  Label
+} from '../../styles/register'
 
 const Register = () => {
   const [email, setEmail] = useState<string>('')
@@ -93,7 +99,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
       return {
         redirect: {
           permanent: false,
-          destination: '/dashboard'
+          destination: '/dashboard/initial'
         },
         props: {}
       }

@@ -1,10 +1,12 @@
 import { verify } from 'jsonwebtoken'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 import { destroyCookie, parseCookies } from 'nookies'
-import { UseAuthContext } from '../context/authContext'
+import { UseAuthContext } from '../../context/authContext'
+import { Anchor } from '../../styles/home'
 
-const dashboard = ctx => {
+const Initial = () => {
   const { handleSignOut } = UseAuthContext()
 
   return (
@@ -14,11 +16,20 @@ const dashboard = ctx => {
       </Head>
       <h1>Pagina dashboard</h1>
       <button onClick={handleSignOut}>Deslogar</button>
+      <hr />
+      <br />
+      <br />
+      <br />
+      <Link href="/dashboard/products" passHref>
+        <Anchor $background="blue" $borderRadius={50} $padding="0.5rem">
+          Cadastro
+        </Anchor>
+      </Link>
     </div>
   )
 }
 
-export default dashboard
+export default Initial
 
 export const getServerSideProps: GetServerSideProps = async context => {
   const cookies = parseCookies(context)
@@ -27,7 +38,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     return {
       redirect: {
         permanent: false,
-        destination: '/login'
+        destination: '/auth/login'
       },
       props: {}
     }
@@ -44,7 +55,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     return {
       redirect: {
         permanent: false,
-        destination: '/login'
+        destination: '/auth/login'
       },
       props: {}
     }

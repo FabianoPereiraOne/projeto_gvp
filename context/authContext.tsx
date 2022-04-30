@@ -42,7 +42,7 @@ const AuthContextProvider = ({
     })
 
     router
-      .push('/dashboard')
+      .push('/dashboard/initial')
       .finally(() => toast.success(`Bem-vindo a dashboard ${name}!`))
   }
 
@@ -65,7 +65,7 @@ const AuthContextProvider = ({
       maxAge: 60 * 60 // 1 hour
     })
 
-    router.push('/dashboard')
+    router.push('/dashboard/initial')
   }
 
   const handleSignOut = async () => {
