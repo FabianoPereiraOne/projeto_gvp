@@ -99,7 +99,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
       return {
         redirect: {
           permanent: false,
-          destination: '/dashboard/initial'
+          destination: '/dashboard'
         },
         props: {}
       }
