@@ -1,9 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.section<{
-  section?: string
-  background?: string
-}>`
+export const Container = styled.section`
   width: 100%;
   min-height: 100vh;
   background-color: var(--white);

@@ -33,9 +33,9 @@ export const ContainerLogo = styled.div`
 `
 
 export const Span = styled.span<{
-  color?: string
+  $color?: string
 }>`
-  ${props => props.color && `color: ${props.color}`}
+  ${props => props.$color && `color: ${props.$color}`}
 `
 export const NavbarSecundary = styled.div`
   width: auto;
@@ -65,7 +65,7 @@ export const Navbar = styled.nav`
   }
 `
 export const ContainerMain = styled.div<{
-  background: string
+  $background: string
 }>`
   width: 100%;
   min-height: 88vh;
@@ -73,7 +73,7 @@ export const ContainerMain = styled.div<{
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  background: url(${props => (props.background ? props.background : '')});
+  background: url(${props => (props.$background ? props.$background : '')});
   background-position: 100% 100%;
   background-size: 60%;
   background-repeat: no-repeat;
@@ -137,18 +137,18 @@ export const H1 = styled.h1`
 `
 
 export const Circle = styled.a<{
-  width?: number
-  height?: number
-  color?: string
-  background?: string
-  fontSize?: string
+  $width?: number
+  $height?: number
+  $color?: string
+  $background?: string
+  $fontSize?: string
 }>`
-  width: ${props => (props.width ? `${props.width}rem` : '3.5rem')};
-  height: ${props => (props.height ? `${props.height}rem` : '3.5rem')};
+  width: ${props => (props.$width ? `${props.$width}rem` : '3.5rem')};
+  height: ${props => (props.$height ? `${props.$height}rem` : '3.5rem')};
   border-radius: 50%;
-  color: ${props => (props.color ? props.color : 'var(--white)')};
+  color: ${props => (props.$color ? props.$color : 'var(--white)')};
   background: ${props =>
-    props.background ? props.background : 'var(--orange-light)'};
+    props.$background ? props.$background : 'var(--orange-light)'};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,7 +156,7 @@ export const Circle = styled.a<{
   bottom: 3rem;
   right: 3rem;
   z-index: 50;
-  font-size: ${props => (props.fontSize ? `${props.fontSize}rem` : '1.6rem')};
+  font-size: ${props => (props.$fontSize ? `${props.$fontSize}rem` : '1.6rem')};
   transition: 0.3s;
   &:hover {
     transform: scale(1.1, 1.1);

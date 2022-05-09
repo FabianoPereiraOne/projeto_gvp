@@ -1,25 +1,25 @@
+import Link from 'next/link'
+import { useState } from 'react'
+import { FaRegCalendarAlt } from 'react-icons/fa'
+import { FiAlignJustify, FiCornerRightUp, FiXCircle } from 'react-icons/fi'
+import imageBackground from '../../../public/assets/vetor_home.svg'
+import { Anchor, LinkRedirect, P } from '../../../styles/home'
 import {
+  ButtonClose,
+  ButtonMenu,
+  Circle,
   Container,
   ContainerLogo,
-  Header,
-  NavbarSecundary,
-  Navbar,
   ContainerMain,
   H1,
-  Circle,
-  Span,
-  TextLogo,
-  ButtonMenu,
+  Header,
   Img,
   MenuMobile,
-  ButtonClose
+  Navbar,
+  NavbarSecundary,
+  Span,
+  TextLogo
 } from './styles'
-import { Anchor, LinkRedirect, P } from '../../../styles/home'
-import { FaRegCalendarAlt } from 'react-icons/fa'
-import { FiCornerRightUp, FiAlignJustify, FiXCircle } from 'react-icons/fi'
-import { useState } from 'react'
-import Link from 'next/link'
-import imageBackground from '../../../public/assets/vetor_home.svg'
 
 export const Main = () => {
   const [activeMenu, setActiveMenu] = useState(false)
@@ -37,7 +37,7 @@ export const Main = () => {
           <LinkRedirect
             to="home"
             smooth={true}
-            animationScaleX={true}
+            $animationScaleX={true}
             aria-label="Link para inicio"
           >
             Inicio
@@ -45,7 +45,7 @@ export const Main = () => {
           <LinkRedirect
             to="about"
             smooth={true}
-            animationScaleX={true}
+            $animationScaleX={true}
             aria-label="Link para sobre"
           >
             Sobre
@@ -53,7 +53,7 @@ export const Main = () => {
           <LinkRedirect
             to="services"
             smooth={true}
-            animationScaleX={true}
+            $animationScaleX={true}
             aria-label="Link para serviços"
           >
             Serviços
@@ -61,7 +61,7 @@ export const Main = () => {
           <LinkRedirect
             to="plans"
             smooth={true}
-            animationScaleX={true}
+            $animationScaleX={true}
             aria-label="Link para planos"
           >
             Planos
@@ -70,8 +70,8 @@ export const Main = () => {
         <NavbarSecundary>
           <Link href="/login">
             <Anchor
-              borderBottom="1px solid var(--white)"
-              animationScaleX={false}
+              $borderBottom="1px solid var(--white)"
+              $animationScaleX={false}
               aria-label="Link para acessar painel"
             >
               Acessar
@@ -79,13 +79,13 @@ export const Main = () => {
           </Link>
           <Link href="/register-payment">
             <Anchor
-              border="1px solid var(--blue-normal)"
-              fontWeight={500}
-              borderReverse={true}
-              background="var(--blue-normal)"
-              borderRadius={2}
-              marginLeft={1}
-              padding="0.5rem 2rem"
+              $border="1px solid var(--blue-normal)"
+              $fontWeight={500}
+              $borderReverse={true}
+              $background="var(--blue-normal)"
+              $borderRadius={2}
+              $marginLeft={1}
+              $padding="0.5rem 2rem"
               aria-label="Link para se registrar"
             >
               Registrar
@@ -97,27 +97,27 @@ export const Main = () => {
           <FiAlignJustify />
         </ButtonMenu>
       </Header>
-      <ContainerMain background={background}>
+      <ContainerMain $background={background}>
         <H1>
-          <Span color="var(--orange-light)">G</Span>erenciador de{' '}
-          <Span color="var(--orange-light)">v</Span>alidade de{' '}
-          <Span color="var(--orange-light)">p</Span>
+          <Span $color="var(--orange-light)">G</Span>erenciador de{' '}
+          <Span $color="var(--orange-light)">v</Span>alidade de{' '}
+          <Span $color="var(--orange-light)">p</Span>
           rodutos
         </H1>
-        <P marginTop={1}>
+        <P $marginTop={1}>
           Forneça uma melhor experiência aos seus clientes fazendo um melhor
           controle da validade de seus produtos.
         </P>
         <LinkRedirect
           to="about"
           smooth={true}
-          borderRadius={2}
-          border="1px solid var(--blue-normal)"
-          height={3}
-          width={20}
-          fontWeight={500}
-          padding="0.5rem 2rem"
-          animationBackground={true}
+          $borderRadius={2}
+          $border="1px solid var(--blue-normal)"
+          $height={3}
+          $width={20}
+          $fontWeight={500}
+          $padding="0.5rem 2rem"
+          $animationBackground={true}
           aria-label="Link para conhecer o sistema GVP"
         >
           Quero conhecer
@@ -141,7 +141,7 @@ export const Main = () => {
           <LinkRedirect
             to="home"
             smooth={true}
-            animationScaleX={true}
+            $animationScaleX={true}
             aria-label="Link para inicio"
           >
             Inicio
@@ -150,7 +150,7 @@ export const Main = () => {
           <LinkRedirect
             to="about"
             smooth={true}
-            animationScaleX={true}
+            $animationScaleX={true}
             aria-label="Link para sobre"
           >
             Sobre
@@ -158,7 +158,7 @@ export const Main = () => {
           <LinkRedirect
             to="services"
             smooth={true}
-            animationScaleX={true}
+            $animationScaleX={true}
             aria-label="Link para serviços"
           >
             Serviços
@@ -166,7 +166,7 @@ export const Main = () => {
           <LinkRedirect
             to="plans"
             smooth={true}
-            animationScaleX={true}
+            $animationScaleX={true}
             aria-label="Link para planos"
           >
             Planos
