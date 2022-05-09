@@ -2,6 +2,32 @@ import * as Scroll from 'react-scroll'
 import styled from 'styled-components'
 const ScrollLink = Scroll.Link
 
+type TypePropsLink = {
+  $marginTop?: number
+  $marginBottom?: number
+  $marginLeft?: number
+  $marginRight?: number
+  $width?: number
+  $height?: number
+  $padding?: string
+  $size?: string
+  $color?: string
+  $background?: string
+  $border?: string
+  $colorHover?: string
+  $backgroundHover?: string
+  $animationScaleX?: boolean
+  $borderBottom?: string
+  $borderLeft?: string
+  $borderRight?: string
+  $borderTop?: string
+  $borderRadius?: number
+  $animationBackground?: boolean
+  $borderReverse?: boolean
+  $borderHover?: string
+  $fontWeight?: number
+}
+
 export const Strong = styled.strong<{
   $size?: number | string
   $cor?: string
@@ -68,26 +94,34 @@ export const Anchor = styled.a<linkParams>`
   ${props =>
     props.$animationScaleX &&
     `&:hover::after {
-      visibility: visible;
-      -webkit-transform: scaleX(1);
-      transform: scaleX(1);
-    }
-  
-    &:after {
-      content: '';
-      width: 100%;
-      height: 0.1rem;
-      background-color: var(--orange-normal);
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      visibility: hidden;
-      -webkit-transform: scaleX(0);
-      transform: scaleX(0);
-      -webkit-transition: all 0.3s ease-in-out 0s;
-      transition: all 0.3s ease-in-out 0s;
-      border-radius: 0.2rem;
-    }`}
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: 0.1rem;
+    background-color: var(--orange-normal);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    border-radius: 0.2rem;
+  }`}
+
+${props =>
+    props.$animationBackground &&
+    `&:hover {
+    background-color: var(--blue-normal);
+    border: 1px solid var(--blue-normal);
+    color: ${props.$colorHover};
+  }`}
 
   ${props =>
     props.$animationBackground &&
@@ -171,7 +205,6 @@ ${props =>
     color: ${props.$colorHover};
   }`}
 
-
   ${props =>
     props.$borderReverse &&
     `
@@ -181,7 +214,6 @@ ${props =>
     color: ${props.$colorHover};
   }
   `}
-
 
   @media screen and (min-width:900px) and (max-width:1201px) {
     font-size: ${props => (props.$size ? props.$size : '1.2rem')};
@@ -209,7 +241,7 @@ export const P = styled.p<{
   $justify?: boolean
   $fontWeight?: number
 }>`
-  color: ${props => (props.color ? props.color : 'var(--white)')};
+  color: ${props => (props.$color ? props.$color : 'var(--white)')};
   font-family: var(--font-secundary), sans-serif;
   font-size: var(--size-sm);
   max-width: 25rem;

@@ -68,7 +68,7 @@ export const Main = () => {
           </LinkRedirect>
         </Navbar>
         <NavbarSecundary>
-          <Link href="/login">
+          <Link href="/auth/login" passHref>
             <Anchor
               $borderBottom="1px solid var(--white)"
               $animationScaleX={false}
@@ -77,7 +77,7 @@ export const Main = () => {
               Acessar
             </Anchor>
           </Link>
-          <Link href="/register-payment">
+          <Link href="/auth/register" passHref>
             <Anchor
               $border="1px solid var(--blue-normal)"
               $fontWeight={500}
@@ -171,6 +171,29 @@ export const Main = () => {
           >
             Planos
           </LinkRedirect>
+          <Link href="/auth/login" passHref>
+            <Anchor
+              $borderBottom="1px solid var(--white)"
+              $animationScaleX={false}
+              aria-label="Link para acessar painel"
+            >
+              Acessar
+            </Anchor>
+          </Link>
+          <Link href="/auth/register" passHref>
+            <Anchor
+              $border="1px solid var(--blue-normal)"
+              $fontWeight={500}
+              $borderReverse={true}
+              $background="var(--blue-normal)"
+              $borderRadius={2}
+              $marginLeft={1}
+              $padding="0.5rem 2rem"
+              aria-label="Link para se registrar"
+            >
+              Registrar
+            </Anchor>
+          </Link>
         </MenuMobile>
       )}
     </Container>
