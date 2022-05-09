@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>GVP | Gerenciador de validade de produtos</title>
+        <title>GVP | Gerenciador de validade de produtoS</title>
       </Head>
       <Main />
       <About />
