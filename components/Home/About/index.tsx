@@ -14,7 +14,7 @@ export const About = () => {
         <P $color="var(--black)" $fontWeight={500}>
           Conheça nosso sistema.
         </P>
-        <P $color="var(--gray)" $marginTop={0.5}>
+        <P $color="var(--gray)" $marginTop={0.5} $justify={true}>
           O GVP surgiu de uma demanda no mercado de tecnologia para
           estabelecimentos que revendem produtos que usamos em nosso dia a dia.
           Apartir da experiência propria de mim, Fabiano Pereira, criador do

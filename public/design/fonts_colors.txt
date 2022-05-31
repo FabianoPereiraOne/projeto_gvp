@@ -21,7 +21,7 @@ calendario: FaRegCalendarAlt
 seta up: FiCornerRightUp
 
 CORES
---blue-dark: #001694;
+--blue-light: #001694;
 --blue-normal: #044BD9;
 --blue-light: #0460D9;
 --orange-normal: #F28705;

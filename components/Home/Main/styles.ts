@@ -3,8 +3,8 @@ import styled from 'styled-components'
 export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
-  padding: 1rem 3rem;
-  background-color: var(--blue-dark);
+  padding: 1.5rem 3rem;
+  background-color: var(--white);
 
   @media screen and (max-width: 1200px) {
     padding: 1rem 1.5rem;
@@ -23,13 +23,7 @@ export const ContainerLogo = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 0.2rem;
-
-  & svg {
-    font-size: var(--size-l);
-    color: var(--white);
-  }
+  justify-content: center;
 `
 
 export const Span = styled.span<{
@@ -120,10 +114,10 @@ export const ContainerMain = styled.div<{
   }
 `
 export const H1 = styled.h1`
-  color: var(--white);
+  color: var(--blue-light);
   font-family: var(--font-primary), sans-serif;
   font-weight: 500;
-  font-size: var(--size-xl);
+  font-size: 4rem;
   max-width: 22rem;
 
   @media screen and (min-width: 600px) and (max-width: 1000px) {
@@ -148,7 +142,7 @@ export const Circle = styled.a<{
   border-radius: 50%;
   color: ${props => (props.$color ? props.$color : 'var(--white)')};
   background: ${props =>
-    props.$background ? props.$background : 'var(--orange-light)'};
+    props.$background ? props.$background : 'var(--orange-normal)'};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -186,7 +180,7 @@ export const ButtonMenu = styled.button`
     border: none;
 
     & svg {
-      color: var(--white);
+      color: var(--gray);
       font-size: 3rem;
     }
   }
@@ -206,7 +200,7 @@ export const MenuMobile = styled.aside`
   top: 0;
   width: 100%;
   height: 100vh;
-  background-color: var(--blue-dark);
+  background-color: var(--gray-light);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -218,9 +212,14 @@ export const MenuMobile = styled.aside`
 export const ButtonClose = styled.button`
   background: none;
   border: none;
-  color: var(--white);
+  color: var(--gray);
   font-size: 3rem;
   position: absolute;
   left: 1rem;
   top: 1rem;
+
+  &:hover {
+    color: var(--blue-light);
+    transition: 0.3s;
+  }
 `

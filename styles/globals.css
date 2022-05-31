@@ -3,21 +3,19 @@
 :root {
   --font-primary: Bebas Neue;
   --font-secundary: Poppins;
-  --size-xl: 64px;
-  --size-mdl: 48px;
-  --size-l: 36px;
-  --size-md: 24px;
-  --size-sm: 18px;
-  --size-xsm: 16px;
   --blue-dark: #001694;
   --blue-normal: #044bd9;
   --blue-light: #0460d9;
   --orange-normal: #f28705;
   --orange-light: #f2b705;
   --purple: #4408a1;
-  --gray: #474646;
+  --gray: #A09D9D;
+  --gray-light: #F2F2F2;
   --white: #ffffff;
-  --black: #0d0d0d;
+  --black: #474646;
+  --black-dark: #0d0d0d;
+  --red: #D92D1A; 
+  --green-light: #B4D91A;
 }
 
 html,

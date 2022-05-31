@@ -14,8 +14,8 @@ export const Plans = () => {
     <Container id="plans">
       <ContainerTextPlans>
         <H5>Planos</H5>
-        <P $color="var(--blue-light)">Conheças nossos planos.</P>
-        <P>
+        <P $color="var(--blue-dark)">Conheças nossos planos.</P>
+        <P $color="var(--white)">
           Estamos com planos imperdiveis, aproveite esse super descontão e tenha
           hoje um sistema alinhado ao gosto e sem gasta muito. Oferta por tempo
           limitado!
@@ -24,40 +24,44 @@ export const Plans = () => {
       <Card>
         <TitlePlans>
           <FiAward />
-          <Strong $size={2}>Basico</Strong>
+          <Strong $size={2} $color="var(--white)">
+            Basico
+          </Strong>
         </TitlePlans>
         <ContentBenefits>
-          <P>
+          <P $color="var(--white)">
             <FiCheckCircle />
             Painel
           </P>
-          <P>
+          <P $color="var(--white)">
             <FiCheckCircle />
             Atualizações
           </P>
-          <P>
+          <P $color="var(--white)">
             <FiCheckCircle />
             Segurança
           </P>
-          <P>
+          <P $color="var(--white)">
             <FiCheckCircle />
             Notificações
           </P>
         </ContentBenefits>
-        <P $justify={false}>
+        <P $justify={true} $color="var(--white)">
           Tenha 7 dias de teste para você conhecer nossas funcionalidades e e
           outros serviços que desenvolvemos com muito carinho para nossos
           clientes. Aproveite!!!
         </P>
-        <Strong $cor="var(--white)">R$ 20,99</Strong>
+        <Strong $color="var(--orange-light)">R$ 00,00</Strong>
         <Link href="/register-payment">
           <Anchor
-            $background="var(--blue-normal)"
-            $border="1px solid var(--blue-normal)"
+            $border="1px solid var(--white)"
             $borderRadius={2}
-            $borderReverse={true}
-            $borderHover="var(--white)"
-            $padding="0.5rem 2.5rem"
+            $padding="0.5rem 3rem"
+            $color="var(--white)"
+            $colorHover="var(--blue-light)"
+            $animationBackground={true}
+            $backgroundHover="var(--white)"
+            $borderHover="1px solid var(--white)"
           >
             Assinar
           </Anchor>

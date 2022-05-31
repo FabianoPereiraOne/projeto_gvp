@@ -22,20 +22,20 @@ export const Services = () => {
         <Slider className={styles.slider}>
           <Slide index={0} className={styles.slide}>
             <FiLock />
-            <P $marginTop={0.3}>
+            <P $marginTop={0.3} $color="var(--white)">
               Fique tranquilo que a segurança de seus dados é nossa prioridade.
             </P>
           </Slide>
           <Slide index={1} className={styles.slide}>
             <FiDatabase />
-            <P $marginTop={0.3}>
+            <P $marginTop={0.3} $color="var(--white)">
               Tenha acesso a grandes bancos de dados para armazenar todos os
               seus produtos e ter um facil acesso a ele.
             </P>
           </Slide>
           <Slide index={2} className={styles.slide}>
             <FiLayout />
-            <P $marginTop={0.3}>
+            <P $marginTop={0.3} $color="var(--white)">
               Navegue por um sistema com design moderno, responsivo e que foi
               planejado para oferecer o melhor aos clientes.
             </P>
@@ -52,8 +52,8 @@ export const Services = () => {
 
       <ContentText>
         <H5>Serviços</H5>
-        <P $color="var(--blue-light)">Veja nossos serviços.</P>
-        <P>
+        <P $color="var(--blue-dark)">Veja nossos serviços.</P>
+        <P $color="var(--white)">
           Nosso sistema possui o máximo de funcionalidades como: Sistema seguro,
           Layout responsivo e moderno, Banco de dados e outros. Tudo isso para
           que você ofereça ao seu cliente um produto de qualidade.

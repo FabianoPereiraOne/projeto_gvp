@@ -2,42 +2,16 @@ import * as Scroll from 'react-scroll'
 import styled from 'styled-components'
 const ScrollLink = Scroll.Link
 
-type TypePropsLink = {
-  $marginTop?: number
-  $marginBottom?: number
-  $marginLeft?: number
-  $marginRight?: number
-  $width?: number
-  $height?: number
-  $padding?: string
-  $size?: string
-  $color?: string
-  $background?: string
-  $border?: string
-  $colorHover?: string
-  $backgroundHover?: string
-  $animationScaleX?: boolean
-  $borderBottom?: string
-  $borderLeft?: string
-  $borderRight?: string
-  $borderTop?: string
-  $borderRadius?: number
-  $animationBackground?: boolean
-  $borderReverse?: boolean
-  $borderHover?: string
-  $fontWeight?: number
-}
-
 export const Strong = styled.strong<{
   $size?: number | string
-  $cor?: string
+  $color?: string
 }>`
   text-transform: uppercase;
   font-family: var(--font-primary), sans-serif;
-  font-size: ${props => (props.$size ? `${props.$size}rem` : 'var(--size-l)')};
+  font-size: ${props => (props.$size ? `${props.$size}rem` : '3rem')};
   margin-top: 0.4rem;
   font-weight: normal;
-  color: ${props => (props.$cor ? props.$cor : 'var(--white)')};
+  color: ${props => (props.$color ? props.$color : 'var(--black)')};
 `
 
 type linkParams = {
@@ -64,6 +38,10 @@ type linkParams = {
   $borderReverse?: boolean
   $borderHover?: string
   $fontWeight?: number
+  $position?: string
+  $left?: string
+  $top?: string
+  $transform?: string
 }
 
 export const Anchor = styled.a<linkParams>`
@@ -79,7 +57,7 @@ export const Anchor = styled.a<linkParams>`
     props.$marginRight ? `${props.$marginRight}rem` : 0};
   text-transform: uppercase;
   font-weight: ${props => (props.$fontWeight ? props.$fontWeight : 400)};
-  color: ${props => (props.$color ? props.$color : 'var(--white)')};
+  color: ${props => (props.$color ? props.$color : 'var(--black)')};
   font-size: ${props => (props.$size ? props.$size : '1.4rem')};
   transition: 0.3s;
   text-align: center;
@@ -90,6 +68,10 @@ export const Anchor = styled.a<linkParams>`
   ${props => props.$borderTop && `border-top: ${props.$borderTop};`}
   ${props => props.$border && `  border:${props.$border};`}
   ${props => props.$borderRadius && `border-radius: ${props.$borderRadius}rem;`}
+  ${props => props.$position && `position: ${props.$position};`}
+  ${props => props.$left && `left: ${props.$left};`}
+  ${props => props.$top && `top: ${props.$top};`}
+  ${props => props.$transform && `transform: translate(${props.$transform});`}
 
   ${props =>
     props.$animationScaleX &&
@@ -115,19 +97,15 @@ export const Anchor = styled.a<linkParams>`
     border-radius: 0.2rem;
   }`}
 
-${props =>
-    props.$animationBackground &&
-    `&:hover {
-    background-color: var(--blue-normal);
-    border: 1px solid var(--blue-normal);
-    color: ${props.$colorHover};
-  }`}
-
   ${props =>
     props.$animationBackground &&
     `&:hover {
-      background-color: var(--blue-normal);
-      border: 1px solid var(--blue-normal);
+      background-color: ${
+        props.$backgroundHover ? props.$backgroundHover : 'var(--blue-light)'
+      };
+      border: ${
+        props.$borderHover ? props.$borderHover : '1px solid var(--blue-normal)'
+      };
       color: ${props.$colorHover};
     }`}
 
@@ -161,7 +139,7 @@ export const LinkRedirect = styled(ScrollLink)<linkParams>`
     props.$marginRight ? `${props.$marginRight}rem` : 0};
   text-transform: uppercase;
   font-weight: ${props => (props.$fontWeight ? props.$fontWeight : 400)};
-  color: ${props => (props.$color ? props.$color : 'var(--white)')};
+  color: ${props => (props.$color ? props.$color : 'var(--black)')};
   font-size: ${props => (props.$size ? props.$size : '1.4rem')};
   transition: 0.3s;
   text-align: center;
@@ -227,7 +205,7 @@ export const H3 = styled.h3<{
   color: ${props => (props.$color ? props.$color : 'var(--gray)')};
   font-family: var(--font-secundary), sans-serif;
   font-weight: 400;
-  font-size: var(--size-l);
+  font-size: 1.3rem;
   ${props => props.$marginTop && `margin-top: ${props.$marginTop}rem;`}
 `
 export const P = styled.p<{
@@ -241,9 +219,9 @@ export const P = styled.p<{
   $justify?: boolean
   $fontWeight?: number
 }>`
-  color: ${props => (props.$color ? props.$color : 'var(--white)')};
+  color: ${props => (props.$color ? props.$color : 'var(--black)')};
   font-family: var(--font-secundary), sans-serif;
-  font-size: var(--size-sm);
+  font-size: 1.3rem;
   max-width: 25rem;
   margin-top: ${props => (props.$marginTop ? `${props.$marginTop}rem` : 0)};
   margin-bottom: ${props =>
@@ -261,11 +239,12 @@ export const Img = styled.img`
 
 export const H5 = styled.h5<{
   $color?: string
+  $size?: number
 }>`
   text-transform: uppercase;
   color: ${props => (props.$color ? props.$color : 'var(--white)')};
   font-family: var(--font-primary), sans-serif;
-  font-size: var(--size-l);
+  font-size: ${props => (props.$size ? `${props.$size}rem` : '2rem')};
   font-weight: 500;
   letter-spacing: 0.3rem;
   z-index: 2;

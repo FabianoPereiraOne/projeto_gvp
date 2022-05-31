@@ -7,7 +7,7 @@ export const Container = styled.section`
   align-items: center;
   justify-content: center;
   position: relative;
-  background-color: var(--blue-dark);
+  background-color: var(--blue-light);
   padding: 1rem 3rem;
   display: flex;
   z-index: 1;
@@ -99,8 +99,8 @@ export const TitlePlans = styled.div`
   gap: 0.2rem;
 
   & svg {
-    font-size: var(--size-l);
-    color: var(--blue-light);
+    font-size: 2rem;
+    color: var(--white);
   }
 `
 export const ContentBenefits = styled.div`
@@ -119,6 +119,6 @@ export const ContentBenefits = styled.div`
 
   & p svg {
     margin-right: 0.2rem;
-    color: var(--orange-light);
+    color: var(--blue-dark);
   }
 `

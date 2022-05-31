@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.footer`
   width: 100%;
   height: 7rem;
-  background-color: var(--blue-dark);
+  background-color: var(--blue-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,7 +44,7 @@ export const Button = styled.button`
 
   & svg {
     font-size: 2rem;
-    color: var(--purple);
+    color: var(--blue-light);
   }
 
   &:first-of-type {
