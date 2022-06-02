@@ -41,6 +41,8 @@ type linkParams = {
   $position?: string
   $left?: string
   $top?: string
+  $right?: string
+  $bottom?: string
   $transform?: string
 }
 
@@ -71,6 +73,8 @@ export const Anchor = styled.a<linkParams>`
   ${props => props.$position && `position: ${props.$position};`}
   ${props => props.$left && `left: ${props.$left};`}
   ${props => props.$top && `top: ${props.$top};`}
+  ${props => props.$right && `right: ${props.$right};`}
+  ${props => props.$bottom && `bottom: ${props.$bottom};`}
   ${props => props.$transform && `transform: translate(${props.$transform});`}
 
   ${props =>
@@ -103,10 +107,10 @@ export const Anchor = styled.a<linkParams>`
       background-color: ${
         props.$backgroundHover ? props.$backgroundHover : 'var(--blue-light)'
       };
-      border: ${
-        props.$borderHover ? props.$borderHover : '1px solid var(--blue-normal)'
-      };
+
+      ${props => props.$borderHover && ` border: ${props.$borderHover}`}
       color: ${props.$colorHover};
+      transition: 0.3s;
     }`}
 
 

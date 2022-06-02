@@ -152,6 +152,7 @@ export const Main = () => {
             $animationScaleX={true}
             aria-label="Link para inicio"
             $color="var(--gray)"
+            onClick={() => setActiveMenu(false)}
           >
             Inicio
           </LinkRedirect>
@@ -162,6 +163,7 @@ export const Main = () => {
             $animationScaleX={true}
             $color="var(--gray)"
             aria-label="Link para sobre"
+            onClick={() => setActiveMenu(false)}
           >
             Sobre
           </LinkRedirect>
@@ -171,6 +173,7 @@ export const Main = () => {
             $animationScaleX={true}
             $color="var(--gray)"
             aria-label="Link para serviços"
+            onClick={() => setActiveMenu(false)}
           >
             Serviços
           </LinkRedirect>
@@ -180,17 +183,20 @@ export const Main = () => {
             $animationScaleX={true}
             $color="var(--gray)"
             aria-label="Link para planos"
+            onClick={() => setActiveMenu(false)}
           >
             Planos
           </LinkRedirect>
           <Link href="/auth/login" passHref>
             <Anchor
               $position="absolute"
-              $left="85%"
-              $top="10%"
-              $transform="-50%,-50%"
-              $borderBottom="1px solid var(--white)"
-              $animationScaleX={false}
+              $right="-1.2rem"
+              $top="1.2rem"
+              $background="var(--blue-light)"
+              $padding="0.3rem 2rem 0.3rem 1.4rem"
+              $borderRadius={2}
+              $fontWeight={500}
+              $color="var(--white)"
               aria-label="Link para acessar painel"
             >
               Acessar
@@ -198,13 +204,16 @@ export const Main = () => {
           </Link>
           <Link href="/auth/register" passHref>
             <Anchor
-              $border="1px solid var(--blue-normal)"
               $fontWeight={500}
-              $borderReverse={true}
-              $background="var(--blue-normal)"
+              $background="var(--gray)"
               $borderRadius={2}
-              $marginLeft={1}
-              $padding="0.5rem 2rem"
+              $padding="0.3rem 2rem 0.3rem 1.6rem"
+              $color="var(--white)"
+              $position="absolute"
+              $right="-1.2rem"
+              $animationBackground={true}
+              $backgroundHover="var(--orange-normal)"
+              $top="4.5rem"
               aria-label="Link para se registrar"
             >
               Registrar
